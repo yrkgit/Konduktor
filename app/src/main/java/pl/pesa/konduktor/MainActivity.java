@@ -11,8 +11,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-
+        try {
+            this.getSupportActionBar().hide();
+        } catch (NullPointerException e) {
+        }
         setContentView(R.layout.activity_main);
-        System.out.println("test commita z AS");
+
     }
 }
