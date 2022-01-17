@@ -8,31 +8,62 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="201px"
-        android:layout_height="67px"
-        android:layout_marginStart="21px"
-        android:layout_marginTop="45px"
+        android:id="@+id/logoPesa"
+        android:layout_width="100.5dp"
+        android:layout_height="33.5dp"
+        android:layout_marginStart="10.5dp"
+        android:layout_marginTop="22.5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_pesa" />
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="1273px"
-        android:layout_height="946px"
-        android:layout_marginStart="21px"
-        android:layout_marginTop="160px"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="27.17px"
-        android:layout_height="32.11px"
-        android:layout_marginStart="1761.48px"
-        android:layout_marginTop="41.22px"
+        android:id="@+id/connectionIcon"
+        android:layout_width="18.33dp"
+        android:layout_height="26.11dp"
+        android:layout_marginStart="880.74dp"
+        android:layout_marginTop="20.61dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_con_color" />
+
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="18.33dp"
+        android:layout_height="26.11dp"
+        android:layout_marginStart="904.25dp"
+        android:layout_marginTop="13.5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_user_solid" />
+    <ImageView
+        android:id="@+id/settingsIcon"
+        android:layout_width="19.87dp"
+        android:layout_height="26.11dp"
+        android:layout_marginStart="931.63dp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_cog_solid" />
+
+    <View
+        android:id="@+id/topLine"
+        android:layout_width="941dp"
+        android:layout_height="4.5dp"
+        android:layout_marginStart="10.5dp"
+        android:layout_marginTop="75.5dp"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="636.5dp"
+        android:layout_height="473dp"
+        android:layout_marginStart="10.5dp"
+        android:layout_marginTop="83dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
