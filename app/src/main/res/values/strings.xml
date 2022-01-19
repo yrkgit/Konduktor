@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Konduktor</string>
+    <string name="next_stop">Następny przystanek:</string>
+    <string name="speed">Prędkość:</string>
+    <string name="passenger_stats">Liczba pasażerów:</string>
+    <string name="station_stats">Bilans ostatniej stacji:</string>
+    <string name="boarding_stats">wsiadający:</string>
+    <string name="unboarding_stats">wysiadający:</string>
 </resources>

@@ -7,6 +7,8 @@
     android:background="@color/backGroundColor"
     tools:context=".MainActivity">
 
+    //LOGO PESA
+
     <ImageView
         android:id="@+id/logoPesa"
         android:layout_width="100.5dp"
@@ -17,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_pesa" />
 
+    //ICON CONNECTION
 
     <ImageView
         android:id="@+id/connectionIcon"
@@ -28,6 +31,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_con_color" />
 
+    //ICON USER
+
     <ImageView
         android:id="@+id/userIcon"
         android:layout_width="18.33dp"
@@ -37,6 +42,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_user_solid" />
+
+    //ICON SETTINGS
+
     <ImageView
         android:id="@+id/settingsIcon"
         android:layout_width="19.87dp"
@@ -46,6 +54,166 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_cog_solid" />
+
+    //NEXT_STOP
+    //LABEL NEXT_STOP
+
+    <TextView
+        android:id="@+id/labelNextStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="130dp"
+        android:text="@string/next_stop"
+        android:textColor="@color/fontColour"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //VALUE NEXT_STOP
+
+    <TextView
+        android:id="@+id/valueNextStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="156.5dp"
+        android:textColor="@color/fontColour"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //SPEED
+    //LABEL SPEED
+
+    <TextView
+        android:id="@+id/labelSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="219.5dp"
+        android:text="@string/speed"
+        android:textColor="@color/fontColour"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //VALUE SPEED
+
+    <TextView
+        android:id="@+id/valueSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="246.5dp"
+        android:textColor="@color/fontColour"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //PASSENGER_STATS
+    //LABEL PASSENGER_STATS
+
+    <TextView
+        android:id="@+id/labelPassengeStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="310dp"
+        android:text="@string/passenger_stats"
+        android:textColor="@color/fontColour"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //VALUE PASSENGER_STATS
+
+    <TextView
+        android:id="@+id/valuePassengeStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="337dp"
+        android:textColor="@color/fontColour"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //STATION_STATS
+    //LABEL STATION_STATS
+
+    <TextView
+        android:id="@+id/labelStationStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="399.5dp"
+        android:text="@string/station_stats"
+        android:textColor="@color/fontColour"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //LABEL BOARDING_STATS
+
+    <TextView
+        android:id="@+id/labeBoardingStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="434.5dp"
+        android:text="@string/boarding_stats"
+        android:textColor="@color/fontColour"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //LABEL UNBOARDING_STATS
+
+    <TextView
+        android:id="@+id/labelUnboardingStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="462dp"
+        android:text="@string/unboarding_stats"
+        android:textColor="@color/fontColour"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //VALUE BOARDING_STATS
+
+    <TextView
+        android:id="@+id/valueBoardingStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="788.5dp"
+        android:layout_marginTop="434.5dp"
+        android:textColor="@color/fontColour"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //VALUE UNBOARDING_STATS
+
+    <TextView
+        android:id="@+id/valueUnboardingStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="788.5dp"
+        android:layout_marginTop="462dp"
+        android:textColor="@color/fontColour"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //TOP SEPARATING LINE
 
     <View
         android:id="@+id/topLine"
@@ -57,6 +225,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    //MAP VIEW
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
