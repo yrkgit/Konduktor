@@ -26,7 +26,7 @@
         android:layout_width="18.33dp"
         android:layout_height="26.11dp"
         android:layout_marginStart="880.74dp"
-        android:layout_marginTop="20.61dp"
+        android:layout_marginTop="13dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_con_color" />
@@ -38,7 +38,7 @@
         android:layout_width="18.33dp"
         android:layout_height="26.11dp"
         android:layout_marginStart="904.25dp"
-        android:layout_marginTop="13.5dp"
+        android:layout_marginTop="13dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_user_solid" />
@@ -192,7 +192,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="788.5dp"
-        android:layout_marginTop="434.5dp"
+        android:layout_marginTop="427dp"
         android:textColor="@color/fontColour"
         android:textSize="21dp"
         android:textStyle="bold"
@@ -206,7 +206,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="788.5dp"
-        android:layout_marginTop="462dp"
+        android:layout_marginTop="455.5dp"
         android:textColor="@color/fontColour"
         android:textSize="21dp"
         android:textStyle="bold"
@@ -221,6 +221,18 @@
         android:layout_height="4.5dp"
         android:layout_marginStart="10.5dp"
         android:layout_marginTop="75.5dp"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //BOTTOM LINE 1
+
+    <View
+        android:id="@+id/bottomLine1"
+        android:layout_width="214.5dp"
+        android:layout_height="4.5dp"
+        android:layout_marginStart="10.5dp"
+        android:layout_marginTop="1dp"
         android:background="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
