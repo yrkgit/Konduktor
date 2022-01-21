@@ -6,4 +6,8 @@
     <string name="station_stats">Bilans ostatniej stacji:</string>
     <string name="boarding_stats">wsiadający:</string>
     <string name="unboarding_stats">wysiadający:</string>
+    <string name="comfort">Komfort</string>
+    <string name="sip">Informacja pasażerska</string>
+    <string name="cctv">Monitoring</string>
+    <string name="szp">Licznik pasażerów</string>
 </resources>
