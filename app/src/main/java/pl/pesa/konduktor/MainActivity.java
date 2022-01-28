@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -92,28 +93,45 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onStart() {
         super.onStart();
         screenSetUp();
-        mapView.onStart();
+        checkMyPermission();
+        if (isPermissionGranted) {
+            mapView.getMapAsync(this);
+            mapView.onStart();
+        }
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         screenSetUp();
-        mapView.onResume();
+        checkMyPermission();
+        if (isPermissionGranted) {
+            mapView.getMapAsync(this);
+            mapView.onResume();
+        }
     }
 
     @Override
     public void onLowMemory() {
         super.onLowMemory();
         screenSetUp();
-        mapView.onLowMemory();
+        checkMyPermission();
+        if (isPermissionGranted) {
+            mapView.getMapAsync(this);
+            mapView.onLowMemory();
+        }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         screenSetUp();
-        mapView.onStop();
+        checkMyPermission();
+        if (isPermissionGranted) {
+            mapView.getMapAsync(this);
+            mapView.onStop();
+        }
     }
 
     @Override
@@ -126,7 +144,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     protected void onPause() {
         super.onPause();
-        mapView.onPause();
+        screenSetUp();
+        checkMyPermission();
+        if (isPermissionGranted) {
+            mapView.getMapAsync(this);
+            mapView.onPause();
+        }
     }
 
     @Override
@@ -154,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Dexter.withContext(this).withPermission(Manifest.permission.ACCESS_FINE_LOCATION).withListener(new PermissionListener() {
             @Override
             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-                Toast.makeText(MainActivity.this, "Permision Granted", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(MainActivity.this, "Permision Granted", Toast.LENGTH_SHORT).show();
                 isPermissionGranted = true;
             }
 
@@ -194,22 +217,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         unboardingStats.setText("12");
     }
 
+    @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         map = googleMap;
-        map.getUiSettings().setMyLocationButtonEnabled(false);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
         map.setMyLocationEnabled(true);
-        map.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(43.1, -87.9)));
 
     }
 }
