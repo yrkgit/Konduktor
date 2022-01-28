@@ -8,7 +8,7 @@
     tools:context=".LogOn">
 
 
-    //LOGO PESA
+<!--    LOGO PESA-->
 
     <ImageView
         android:id="@+id/logoPesa"
@@ -20,14 +20,40 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_logo_pesa__1_" />
 
-    //TOP SEPARATING LINE
+<!--    TOP SEPARATING LINE-->
     <View
         android:id="@+id/topLine"
         android:layout_width="941dp"
         android:layout_height="4.5dp"
         android:layout_marginStart="10.5dp"
         android:layout_marginTop="75.5dp"
-        android:background="@android:color/white"
+        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/logOnBox"
+        android:layout_width="377.33dp"
+        android:layout_height="332dp"
+        android:layout_marginStart="291.33dp"
+        android:layout_marginTop="170dp"
+        android:background="@color/whiter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--    LABEL NEXT_STOP-->
+
+    <TextView
+        android:id="@+id/labelNextStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="351.25dp"
+        android:layout_marginTop="193.5dp"
+        android:text="@string/login"
+        android:textColor="@color/fontColour"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

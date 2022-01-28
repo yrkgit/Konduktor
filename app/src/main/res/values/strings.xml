@@ -10,4 +10,5 @@
     <string name="sip">Informacja pasażerska</string>
     <string name="cctv">Monitoring</string>
     <string name="szp">Licznik pasażerów</string>
+    <string name="login">Logowanie</string>
 </resources>

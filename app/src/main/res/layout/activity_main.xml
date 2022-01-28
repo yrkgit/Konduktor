@@ -7,7 +7,7 @@
     android:background="@color/backGroundColor"
     tools:context=".MainActivity">
 
-    //LOGO PESA
+<!--    LOGO PESA-->
 
     <ImageView
         android:id="@+id/logoPesa"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_logo_pesa__1_" />
 
-    //ICON CONNECTION
+<!--    ICON CONNECTION-->
 
     <ImageView
         android:id="@+id/connectionIcon"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_con_color" />
 
-    //ICON USER
+<!--    ICON USER-->
 
     <ImageView
         android:id="@+id/userIcon"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_user_solid" />
 
-    //ICON SETTINGS
+<!--    ICON SETTINGS-->
 
     <ImageView
         android:id="@+id/settingsIcon"
@@ -55,8 +55,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_cog_solid" />
 
-    //NEXT_STOP
-    //LABEL NEXT_STOP
+<!--    NEXT_STOP-->
+<!--    LABEL NEXT_STOP-->
 
     <TextView
         android:id="@+id/labelNextStop"
@@ -70,7 +70,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //VALUE NEXT_STOP
+<!--    VALUE NEXT_STOP-->
 
     <TextView
         android:id="@+id/valueNextStop"
@@ -84,8 +84,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //SPEED
-    //LABEL SPEED
+<!--    SPEED-->
+<!--    LABEL SPEED-->
 
     <TextView
         android:id="@+id/labelSpeed"
@@ -99,7 +99,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //VALUE SPEED
+<!--    VALUE SPEED-->
 
     <TextView
         android:id="@+id/valueSpeed"
@@ -113,8 +113,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //PASSENGER_STATS
-    //LABEL PASSENGER_STATS
+<!--    PASSENGER_STATS-->
+<!--    LABEL PASSENGER_STATS-->
 
     <TextView
         android:id="@+id/labelPassengeStats"
@@ -128,7 +128,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //VALUE PASSENGER_STATS
+<!--    VALUE PASSENGER_STATS-->
 
     <TextView
         android:id="@+id/valuePassengeStats"
@@ -142,8 +142,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //STATION_STATS
-    //LABEL STATION_STATS
+<!--    STATION_STATS-->
+<!--    LABEL STATION_STATS-->
 
     <TextView
         android:id="@+id/labelStationStats"
@@ -157,7 +157,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //LABEL BOARDING_STATS
+<!--    LABEL BOARDING_STATS-->
 
     <TextView
         android:id="@+id/labeBoardingStats"
@@ -171,7 +171,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //LABEL UNBOARDING_STATS
+<!--    LABEL UNBOARDING_STATS-->
 
     <TextView
         android:id="@+id/labelUnboardingStats"
@@ -185,7 +185,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //VALUE BOARDING_STATS
+<!--    VALUE BOARDING_STATS-->
 
     <TextView
         android:id="@+id/valueBoardingStats"
@@ -199,7 +199,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //VALUE UNBOARDING_STATS
+<!--    VALUE UNBOARDING_STATS-->
 
     <TextView
         android:id="@+id/valueUnboardingStats"
@@ -213,7 +213,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //TOP SEPARATING LINE
+<!--    TOP SEPARATING LINE-->
     <View
         android:id="@+id/topLine"
         android:layout_width="941dp"
@@ -226,8 +226,8 @@
 
 
 
-    //COMFORT SECTION
-    //LINE 1
+<!--    COMFORT SECTION-->
+<!--    LINE 1-->
     <View
         android:id="@+id/bottomLine1"
         android:layout_width="214.5dp"
@@ -237,7 +237,7 @@
         android:background="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    //BUTTON COMFORT
+<!--    BUTTON COMFORT-->
     <TextView
         android:id="@+id/labelComfort"
         android:layout_width="wrap_content"
@@ -253,8 +253,8 @@
 
 
 
-    //SIP SECTION
-    //LINE 2
+<!--    SIP SECTION-->
+<!--    LINE 2-->
     <View
         android:id="@+id/bottomLine2"
         android:layout_width="214.5dp"
@@ -265,7 +265,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //BUTTON SIP
+<!--    BUTTON SIP-->
     <TextView
         android:id="@+id/labelSip"
         android:layout_width="wrap_content"
@@ -280,8 +280,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    //CCTV SECTION
-    //LINE 3
+<!--    CCTV SECTION-->
+<!--    LINE 3-->
     <View
         android:id="@+id/bottomLine3"
         android:layout_width="214.5dp"
@@ -292,7 +292,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //BUTTON CCTV
+<!--    BUTTON CCTV-->
     <TextView
         android:id="@+id/labelCctv"
         android:layout_width="wrap_content"
@@ -307,8 +307,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    //SZP SECTION
-    //LINE 4
+<!--    SZP SECTION-->
+<!--    LINE 4-->
 
     <View
         android:id="@+id/bottomLine4"
@@ -320,7 +320,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //BUTTON SZP
+<!--    BUTTON SZP-->
     <TextView
         android:id="@+id/labelSzp"
         android:layout_width="wrap_content"
@@ -334,7 +334,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //MAP VIEW
+<!--    MAP VIEW-->
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
