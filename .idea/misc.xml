@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/PC/AndroidStudioProjects/Konduktor/app/src/main/res/drawable/bg_gradient.xml" value="0.26" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Konduktor/app/src/main/res/drawable/ic_logo_pesa__1_.xml" value="0.4845" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/Konduktor/app/src/main/res/drawable/splash_layout.xml" value="0.4231578841169788" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Konduktor/app/src/main/res/layout/activity_main.xml" value="0.23129080863887494" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Konduktor/app/src/main/res/layout/activity_splash_screen.xml" value="0.24583333333333332" />
       </map>
