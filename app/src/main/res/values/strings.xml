@@ -13,4 +13,5 @@
     <string name="login">Logowanie</string>
     <string name="user_name">Nazwa użytkownika</string>
     <string name="password">Hasło</string>
+    <string name="logon">Zaloguj</string>
 </resources>

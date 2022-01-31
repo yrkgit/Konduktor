@@ -9,5 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="whiter">#1CFFFFFF</color>
     <color name="backGroundColor">#0E1E46</color>
-    <color name="fontColour">#FFFFFFFF</color>
+    <color name="fontColor">#FFFFFFFF</color>
+    <color name="logOnButtonColor">#97BF14</color>
 </resources>
