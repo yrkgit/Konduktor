@@ -8,7 +8,7 @@
     tools:context=".LogOn">
 
 
-<!--    LOGO PESA-->
+    <!--    LOGO PESA-->
 
     <ImageView
         android:id="@+id/logoPesa"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_logo_pesa__1_" />
 
-<!--    TOP SEPARATING LINE-->
+    <!--    TOP SEPARATING LINE-->
     <View
         android:id="@+id/topLine"
         android:layout_width="941dp"
@@ -31,6 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--    LOGON BOX-->
     <View
         android:id="@+id/logOnBox"
         android:layout_width="377.33dp"
@@ -40,10 +41,10 @@
         android:background="@color/whiter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!--    LABEL NEXT_STOP-->
 
+    <!--    LABEL LOGIN-->
     <TextView
-        android:id="@+id/labelNextStop"
+        android:id="@+id/labelLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="351.25dp"
@@ -54,6 +55,60 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--    LABEL USER NAME-->
+    <TextView
+        android:id="@+id/labelUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="351.5dp"
+        android:layout_marginTop="265dp"
+        android:text="@string/user_name"
+        android:textColor="@color/fontColour"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <!--    EDIT TEXT USER NAME-->
+    <EditText
+        android:id="@+id/editTextUserName"
+        android:layout_width="254.75dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="351.25dp"
+        android:layout_marginTop="284.5dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:background="@drawable/edit_text_design"
+        android:drawableRight="@drawable/ic_user_name_edit_text"
+        android:drawablePadding="15dp"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!--    LABEL PASSWORD-->
+    <TextView
+        android:id="@+id/labelPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="351.5dp"
+        android:layout_marginTop="318.5dp"
+        android:text="@string/password"
+        android:textColor="@color/fontColour"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    EDIT TEXT PASSWORD-->
+    <EditText
+        android:id="@+id/editTexPassword"
+        android:layout_width="254.75dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="351.25dp"
+        android:layout_marginTop="337dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:background="@drawable/edit_text_design"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

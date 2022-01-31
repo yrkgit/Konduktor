@@ -11,4 +11,6 @@
     <string name="cctv">Monitoring</string>
     <string name="szp">Licznik pasażerów</string>
     <string name="login">Logowanie</string>
+    <string name="user_name">Nazwa użytkownika</string>
+    <string name="password">Hasło</string>
 </resources>
