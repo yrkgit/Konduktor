@@ -120,9 +120,9 @@
         android:layout_height="32.63dp"
         android:layout_marginStart="412.31dp"
         android:layout_marginTop="409dp"
-
         android:textSize="22dp"
-        android:background="@color/logOnButtonColor"
+        android:onClick="onClickButton"
+        android:background="@drawable/button_logon_design"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <!--    LOGON BUTTON TEXT-->
@@ -137,6 +137,7 @@
         android:textSize="22dp"
         app:layout_constraintStart_toStartOf="@+id/logOnButton"
         app:layout_constraintTop_toTopOf="@+id/logOnButton" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

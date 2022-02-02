@@ -2,18 +2,21 @@ package pl.pesa.konduktor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class LogOn extends AppCompatActivity {
 
+    View logOnButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        screenSetUp();
         setTheme(R.style.Theme_Konduktor);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_on);
 
-        screenSetUp();
     }
 //TO DO WYRZUCI SCREENSETUP DO KLASY SCREEN
     public void screenSetUp() {
@@ -24,5 +27,10 @@ public class LogOn extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+    }
+
+    public void onClickButton(View view) {
+        Intent intent = new Intent(LogOn.this, MainActivity.class );
+        startActivity(intent);
     }
 }

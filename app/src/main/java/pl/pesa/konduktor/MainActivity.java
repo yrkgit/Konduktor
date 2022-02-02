@@ -12,6 +12,9 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     boolean isPermissionGranted;
     MapView mapView;
     GoogleMap map;
+    TextView messageBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_main);
 
+        messageBox = findViewById(R.id.labelMessage);
+        messageBox.setVisibility(View.INVISIBLE);
         mapView = findViewById(R.id.mapView);
         checkMyPermission();
         if (isPermissionGranted) {
@@ -178,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Dexter.withContext(this).withPermission(Manifest.permission.ACCESS_FINE_LOCATION).withListener(new PermissionListener() {
             @Override
             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-               // Toast.makeText(MainActivity.this, "Permision Granted", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(MainActivity.this, "Permision Granted", Toast.LENGTH_SHORT).show();
                 isPermissionGranted = true;
             }
 
@@ -224,5 +230,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         map = googleMap;
         map.setMyLocationEnabled(true);
 
+    }
+
+    public void displayMessage(int priority, String message) {
+        messageBox.setVisibility(View.VISIBLE);
+        messageBox.getBackground().setColorFilter(Color.parseColor("#FF8000"), PorterDuff.Mode.DARKEN);
+        messageBox.setText(message);
+    }
+
+    //DO USUNIECIA - TESTY
+    public void onClickButtonTest(View view) {
+        displayMessage(5,"TESt");
     }
 }

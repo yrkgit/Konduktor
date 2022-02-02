@@ -14,4 +14,5 @@
     <string name="user_name">Nazwa użytkownika</string>
     <string name="password">Hasło</string>
     <string name="logon">Zaloguj</string>
+    <string name="appName">SMART CONDUCTOR</string>
 </resources>
