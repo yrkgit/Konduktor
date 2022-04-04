@@ -10,13 +10,14 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/Konduktor/app/src/main/res/drawable/ic_user_name_edit_text.xml" value="0.372" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Konduktor/app/src/main/res/drawable/ic_user_solid.xml" value="0.372" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Konduktor/app/src/main/res/drawable/splash_layout.xml" value="0.4231578841169788" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/Konduktor/app/src/main/res/layout/activity_comfort.xml" value="0.24583333333333332" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Konduktor/app/src/main/res/layout/activity_log_on.xml" value="0.4736841986384091" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Konduktor/app/src/main/res/layout/activity_main.xml" value="0.23129080863887494" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Konduktor/app/src/main/res/layout/activity_splash_screen.xml" value="0.24583333333333332" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

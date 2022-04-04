@@ -38,6 +38,11 @@ import com.karumi.dexter.listener.single.PermissionListener;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
+
+    // TO DO - Przerzucić menu boczne i górny pasek do osobnych klas
+    // FRAGMENTS
+
+
     boolean isPermissionGranted;
     MapView mapView;
     GoogleMap map;
