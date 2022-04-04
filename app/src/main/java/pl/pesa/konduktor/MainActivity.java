@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 

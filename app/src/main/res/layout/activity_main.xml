@@ -58,8 +58,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="21dp"
         android:textColor="@color/white"
-        android:timeZone="GMT+0100"
-        android:format24Hour="kk:mm"/>
+        android:format12Hour="kk:mm"/>
 
 
 
