@@ -7,7 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="whiter">#1CFFFFFF</color>
+    <color name="whiteTransparent">#1CFFFFFF</color>
+    <color name="sideBarColor">#66F3F3F3</color>
     <color name="backGroundColor">#0E1E46</color>
     <color name="fontColor">#FFFFFFFF</color>
     <color name="logOnButtonColor">#97BF14</color>

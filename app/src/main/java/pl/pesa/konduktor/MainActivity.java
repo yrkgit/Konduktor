@@ -240,6 +240,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     //DO USUNIECIA - TESTY
     public void onClickButtonTest(View view) {
-        displayMessage(5,"TESt");
+        displayMessage(5,"Przycisk SOS - toaleta");
     }
 }
