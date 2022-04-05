@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentManager;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -58,6 +59,23 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         messageBox = findViewById(R.id.labelMessage);
         messageBox.setVisibility(View.INVISIBLE);
         mapView = findViewById(R.id.mapView);
+
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        fragmentManager.beginTransaction()
+//                .replace(R.id.flFragment, FirstFragment.class, null)
+//                .commit();
+//
+//        btn1.setOnClickListener(view -> fragmentManager.beginTransaction()
+//                .replace(R.id.flFragment, FirstFragment.class, null)
+//                //TO DO - usunąć problem wielokrotnego wstecz przy kilkurazowym kliknieciu lub przejsciu miedzy fragmentami - wraca całą sieżkę kliknięć
+//                .addToBackStack(null)
+//                .commit());
+//
+//        btn2.setOnClickListener(view -> fragmentManager.beginTransaction()
+//                .replace(R.id.flFragment, SecondFragment.class, null)
+//                .addToBackStack(null)
+//                .commit());
+//
         checkMyPermission();
         if (isPermissionGranted) {
             mapView.getMapAsync(this);

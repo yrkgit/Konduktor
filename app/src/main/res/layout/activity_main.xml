@@ -8,6 +8,13 @@
     tools:context=".MainActivity">
 
 <!--    topBarFragment-->
+
+    <FrameLayout
+        android:id="@+id/flFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        />
 <!--    LOGO PESA-->
 <!--Do usuniecia onClic-->
     <ImageView
@@ -111,7 +118,7 @@
 
     <!--  END  sideBarFragment-->
 
-
+    <!--    mainFragment-->
 <!--    NEXT_STOP-->
 <!--    LABEL NEXT_STOP-->
 
@@ -382,8 +389,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    MAP VIEW-->
+    <!--  END mainFragment-->
 
+<!--    MAP VIEW-->
+    <!--    actionFragment-->
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="569dp"
@@ -392,4 +401,5 @@
         android:layout_marginTop="83dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <!--    END actionFragment-->
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,4 +15,6 @@
     <string name="password">Hasło</string>
     <string name="logon">Zaloguj</string>
     <string name="appName">SMART CONDUCTOR</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
