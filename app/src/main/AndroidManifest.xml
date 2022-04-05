@@ -22,9 +22,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Konduktor">
         <activity
-            android:name=".Comfort"
-            android:exported="false" />
-        <activity
             android:name=".LogOn"
             android:exported="true"
             android:label="@string/app_name"

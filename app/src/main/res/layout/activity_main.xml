@@ -7,6 +7,7 @@
     android:background="@color/backGroundColor"
     tools:context=".MainActivity">
 
+<!--    topBarFragment-->
 <!--    LOGO PESA-->
 <!--Do usuniecia onClic-->
     <ImageView
@@ -60,8 +61,19 @@
         android:textColor="@color/white"
         android:format12Hour="kk:mm"/>
 
+    <!--    TOP SEPARATING LINE-->
+    <View
+        android:id="@+id/topLine"
+        android:layout_width="941dp"
+        android:layout_height="4.5dp"
+        android:layout_marginStart="10.5dp"
+        android:layout_marginTop="75.5dp"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--   END topBarFragment-->
 
-
+    <!--    sideBarFragment-->
     <!--    SIDE BAR-->
     <View
         android:id="@+id/sideBar"
@@ -96,6 +108,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_cog_solid" />
+
+    <!--  END  sideBarFragment-->
+
 
 <!--    NEXT_STOP-->
 <!--    LABEL NEXT_STOP-->
@@ -255,16 +270,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    TOP SEPARATING LINE-->
-    <View
-        android:id="@+id/topLine"
-        android:layout_width="941dp"
-        android:layout_height="4.5dp"
-        android:layout_marginStart="10.5dp"
-        android:layout_marginTop="75.5dp"
-        android:background="@android:color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
 
 
