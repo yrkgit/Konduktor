@@ -60,10 +60,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         messageBox.setVisibility(View.INVISIBLE);
         mapView = findViewById(R.id.mapView);
 
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        fragmentManager.beginTransaction()
-//                .replace(R.id.flFragment, FirstFragment.class, null)
-//                .commit();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.topBarLayout, TopBarFragment.class, null)
+                .commit();
 //
 //        btn1.setOnClickListener(view -> fragmentManager.beginTransaction()
 //                .replace(R.id.flFragment, FirstFragment.class, null)

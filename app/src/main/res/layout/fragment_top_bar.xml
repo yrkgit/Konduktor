@@ -1,14 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backGroundColor"
     tools:context=".TopBarFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <!--    LOGO PESA-->
+<!--Do usuniecia onClic-->
+    <ImageView
+        android:id="@+id/logoPesa"
+        android:layout_width="100.5dp"
+        android:layout_height="33.5dp"
+        android:layout_marginStart="10.5dp"
+        android:layout_marginTop="22.5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="onClickButtonTest"
+        app:srcCompat="@drawable/ic_logo_pesa__1_" />
 
-</FrameLayout>
+    <!--    MESSAGE -->
+    <!--    MESSAGE TEXT-->
+    <TextView
+
+        android:id="@+id/labelMessage"
+        android:layout_width="477dp"
+        android:layout_height="50.5dp"
+        android:gravity="center"
+        android:background="@drawable/message_design"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+<!--    ICON CONNECTION-->
+
+    <ImageView
+        android:id="@+id/connectionIcon"
+        android:layout_width="18.33dp"
+        android:layout_height="26.11dp"
+        android:layout_marginStart="870dp"
+        android:layout_marginTop="10.34dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_con_color" />
+
+    <!--    CLOCK-->
+    <TextClock
+        android:layout_width="55dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="895.5dp"
+        android:layout_marginTop="8.5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="21dp"
+        android:textColor="@color/white"
+        android:format12Hour="kk:mm"/>
+
+    <!--    TOP SEPARATING LINE-->
+    <View
+        android:id="@+id/topLine"
+        android:layout_width="941dp"
+        android:layout_height="4.5dp"
+        android:layout_marginStart="10.5dp"
+        android:layout_marginTop="75.5dp"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

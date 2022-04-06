@@ -10,77 +10,89 @@
 <!--    topBarFragment-->
 
     <FrameLayout
-        android:id="@+id/flFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
+        android:id="@+id/topBarLayout"
+        android:layout_width="960dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
-<!--    LOGO PESA-->
-<!--Do usuniecia onClic-->
-    <ImageView
-        android:id="@+id/logoPesa"
-        android:layout_width="100.5dp"
-        android:layout_height="33.5dp"
-        android:layout_marginStart="10.5dp"
-        android:layout_marginTop="22.5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="onClickButtonTest"
-        app:srcCompat="@drawable/ic_logo_pesa__1_" />
+<!--&lt;!&ndash;    LOGO PESA&ndash;&gt;-->
+<!--&lt;!&ndash;Do usuniecia onClic&ndash;&gt;-->
+<!--    <ImageView-->
+<!--        android:id="@+id/logoPesa"-->
+<!--        android:layout_width="100.5dp"-->
+<!--        android:layout_height="33.5dp"-->
+<!--        android:layout_marginStart="10.5dp"-->
+<!--        android:layout_marginTop="22.5dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:onClick="onClickButtonTest"-->
+<!--        app:srcCompat="@drawable/ic_logo_pesa__1_" />-->
 
-    <!--    MESSAGE -->
-    <!--    MESSAGE TEXT-->
-    <TextView
+<!--    &lt;!&ndash;    MESSAGE &ndash;&gt;-->
+<!--    &lt;!&ndash;    MESSAGE TEXT&ndash;&gt;-->
+<!--    <TextView-->
 
-        android:id="@+id/labelMessage"
-        android:layout_width="477dp"
-        android:layout_height="50.5dp"
-        android:gravity="center"
-        android:background="@drawable/message_design"
-        android:textColor="@color/black"
-        android:textSize="14dp"
-        android:layout_marginStart="170dp"
-        android:layout_marginTop="14dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+<!--        android:id="@+id/labelMessage"-->
+<!--        android:layout_width="477dp"-->
+<!--        android:layout_height="50.5dp"-->
+<!--        android:gravity="center"-->
+<!--        android:background="@drawable/message_design"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="14dp"-->
+<!--        android:layout_marginStart="170dp"-->
+<!--        android:layout_marginTop="14dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"/>-->
 
-<!--    ICON CONNECTION-->
+<!--&lt;!&ndash;    ICON CONNECTION&ndash;&gt;-->
 
-    <ImageView
-        android:id="@+id/connectionIcon"
-        android:layout_width="18.33dp"
-        android:layout_height="26.11dp"
-        android:layout_marginStart="870dp"
-        android:layout_marginTop="10.34dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_con_color" />
+<!--    <ImageView-->
+<!--        android:id="@+id/connectionIcon"-->
+<!--        android:layout_width="18.33dp"-->
+<!--        android:layout_height="26.11dp"-->
+<!--        android:layout_marginStart="870dp"-->
+<!--        android:layout_marginTop="10.34dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/ic_con_color" />-->
 
-    <!--    CLOCK-->
-    <TextClock
-        android:layout_width="55dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="895.5dp"
-        android:layout_marginTop="8.5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="21dp"
-        android:textColor="@color/white"
-        android:format12Hour="kk:mm"/>
+<!--    &lt;!&ndash;    CLOCK&ndash;&gt;-->
+<!--    <TextClock-->
+<!--        android:layout_width="55dp"-->
+<!--        android:layout_height="28dp"-->
+<!--        android:layout_marginStart="895.5dp"-->
+<!--        android:layout_marginTop="8.5dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:textSize="21dp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:format12Hour="kk:mm"/>-->
 
-    <!--    TOP SEPARATING LINE-->
-    <View
-        android:id="@+id/topLine"
-        android:layout_width="941dp"
-        android:layout_height="4.5dp"
-        android:layout_marginStart="10.5dp"
-        android:layout_marginTop="75.5dp"
-        android:background="@android:color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <!--   END topBarFragment-->
+<!--    &lt;!&ndash;    TOP SEPARATING LINE&ndash;&gt;-->
+<!--    <View-->
+<!--        android:id="@+id/topLine"-->
+<!--        android:layout_width="941dp"-->
+<!--        android:layout_height="4.5dp"-->
+<!--        android:layout_marginStart="10.5dp"-->
+<!--        android:layout_marginTop="75.5dp"-->
+<!--        android:background="@android:color/white"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+<!--    &lt;!&ndash;   END topBarFragment&ndash;&gt;-->
 
     <!--    sideBarFragment-->
+    <FrameLayout
+        android:id="@+id/topSideLayout"
+        android:layout_width="61dp"
+        android:layout_height="463.5dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="89.5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
     <!--    SIDE BAR-->
     <View
         android:id="@+id/sideBar"
@@ -119,6 +131,16 @@
     <!--  END  sideBarFragment-->
 
     <!--    mainFragment-->
+
+    <FrameLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="960dp"
+        android:layout_height="520dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 <!--    NEXT_STOP-->
 <!--    LABEL NEXT_STOP-->
 
@@ -390,7 +412,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--  END mainFragment-->
-
+    <FrameLayout
+        android:id="@+id/centerLayout"
+        android:layout_width="569dp"
+        android:layout_height="473dp"
+        android:layout_marginStart="80.5dp"
+        android:layout_marginTop="83dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 <!--    MAP VIEW-->
     <!--    actionFragment-->
     <com.google.android.gms.maps.MapView

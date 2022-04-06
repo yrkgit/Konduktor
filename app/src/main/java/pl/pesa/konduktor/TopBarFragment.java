@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class FirstFragment extends Fragment {
+public class TopBarFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
