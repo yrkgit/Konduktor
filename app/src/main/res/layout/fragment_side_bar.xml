@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGroundColor"
+    tools:context=".SideBarFragment">
+
+    <!--    SIDE BAR-->
+    <View
+        android:id="@+id/sideBar"
+        android:layout_width="61dp"
+        android:layout_height="463.5dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/sideBarColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    ICON USER-->
+
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="20.09dp"
+        android:layout_height="26.11dp"
+        android:layout_marginStart="19.91dp"
+        android:layout_marginTop="152.84dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_user_solid" />
+
+    <!--    ICON SETTINGS-->
+
+    <ImageView
+        android:id="@+id/settingsIcon"
+        android:layout_width="19.87dp"
+        android:layout_height="26.11dp"
+        android:layout_marginStart="19.91dp"
+        android:layout_marginTop="207.5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_cog_solid" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

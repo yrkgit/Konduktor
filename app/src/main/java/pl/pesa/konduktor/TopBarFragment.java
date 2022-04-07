@@ -38,7 +38,7 @@ public class TopBarFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        messageBox = getView().findViewById(R.id.labelMessage1);
+        messageBox = getView().findViewById(R.id.labelMessage);
         messageBox.setVisibility(View.INVISIBLE);
     }
     public static void displayMessage(int priority, String message) {

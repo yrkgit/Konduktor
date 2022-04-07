@@ -65,21 +65,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.topBarLayout,TopBarFragment.class,null)
+                .replace(R.id.sideBarLayout,SideBarFragment.class,null)
                 .commit();
 
 
-
-//        FragmentManager fragmentManager = getFragmentManager();
-//        fragmentManager.beginTransaction()
-//                .replace(R.id.topBarLayout, TopBarFragment.class)
-//                .commit();
-
-
-//        FragmentManager fragmentManager =  getFragmentManager();
-//        fragmentManager.beginTransaction()
-//                .replace(R.id.topBarLayout, TopBarFragment.class, null)
-//                .commit();
-//
 //        btn1.setOnClickListener(view -> fragmentManager.beginTransaction()
 //                .replace(R.id.flFragment, FirstFragment.class, null)
 //                //TO DO - usunąć problem wielokrotnego wstecz przy kilkurazowym kliknieciu lub przejsciu miedzy fragmentami - wraca całą sieżkę kliknięć

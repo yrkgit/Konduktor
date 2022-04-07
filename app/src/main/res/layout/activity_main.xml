@@ -18,74 +18,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
-<!--&lt;!&ndash;    LOGO PESA&ndash;&gt;-->
-<!--&lt;!&ndash;Do usuniecia onClic&ndash;&gt;-->
-<!--    <ImageView-->
-<!--        android:id="@+id/logoPesa"-->
-<!--        android:layout_width="100.5dp"-->
-<!--        android:layout_height="33.5dp"-->
-<!--        android:layout_marginStart="10.5dp"-->
-<!--        android:layout_marginTop="22.5dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:onClick="onClickButtonTest"-->
-<!--        app:srcCompat="@drawable/ic_logo_pesa__1_" />-->
-
-<!--    &lt;!&ndash;    MESSAGE &ndash;&gt;-->
-<!--    &lt;!&ndash;    MESSAGE TEXT&ndash;&gt;-->
-<!--    <TextView-->
-
-<!--        android:id="@+id/labelMessage"-->
-<!--        android:layout_width="477dp"-->
-<!--        android:layout_height="50.5dp"-->
-<!--        android:gravity="center"-->
-<!--        android:background="@drawable/message_design"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="14dp"-->
-<!--        android:layout_marginStart="170dp"-->
-<!--        android:layout_marginTop="14dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"/>-->
-
-<!--&lt;!&ndash;    ICON CONNECTION&ndash;&gt;-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/connectionIcon"-->
-<!--        android:layout_width="18.33dp"-->
-<!--        android:layout_height="26.11dp"-->
-<!--        android:layout_marginStart="870dp"-->
-<!--        android:layout_marginTop="10.34dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:srcCompat="@drawable/ic_con_color" />-->
-
-<!--    &lt;!&ndash;    CLOCK&ndash;&gt;-->
-<!--    <TextClock-->
-<!--        android:layout_width="55dp"-->
-<!--        android:layout_height="28dp"-->
-<!--        android:layout_marginStart="895.5dp"-->
-<!--        android:layout_marginTop="8.5dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:textSize="21dp"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:format12Hour="kk:mm"/>-->
-
-<!--    &lt;!&ndash;    TOP SEPARATING LINE&ndash;&gt;-->
-<!--    <View-->
-<!--        android:id="@+id/topLine"-->
-<!--        android:layout_width="941dp"-->
-<!--        android:layout_height="4.5dp"-->
-<!--        android:layout_marginStart="10.5dp"-->
-<!--        android:layout_marginTop="75.5dp"-->
-<!--        android:background="@android:color/white"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-<!--    &lt;!&ndash;   END topBarFragment&ndash;&gt;-->
 
     <!--    sideBarFragment-->
     <FrameLayout
-        android:id="@+id/topSideLayout"
+        android:id="@+id/sideBarLayout"
         android:layout_width="61dp"
         android:layout_height="463.5dp"
         android:layout_marginStart="0dp"
@@ -93,42 +29,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
-    <!--    SIDE BAR-->
-    <View
-        android:id="@+id/sideBar"
-        android:layout_width="61dp"
-        android:layout_height="463.5dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="89.5dp"
-        android:background="@color/sideBarColor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!--    ICON USER-->
-
-    <ImageView
-        android:id="@+id/userIcon"
-        android:layout_width="20.09dp"
-        android:layout_height="26.11dp"
-        android:layout_marginStart="19.91dp"
-        android:layout_marginTop="242.34dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_user_solid" />
-
-    <!--    ICON SETTINGS-->
-
-    <ImageView
-        android:id="@+id/settingsIcon"
-        android:layout_width="19.87dp"
-        android:layout_height="26.11dp"
-        android:layout_marginStart="19.91dp"
-        android:layout_marginTop="297dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_cog_solid" />
-
-    <!--  END  sideBarFragment-->
 
     <!--    mainFragment-->
 
