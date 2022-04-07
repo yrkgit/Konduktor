@@ -17,6 +17,8 @@ public class LogOn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_on);
 
+
+
     }
 //TO DO WYRZUCI SCREENSETUP DO KLASY SCREEN
     public void screenSetUp() {

@@ -1,6 +1,8 @@
 package pl.pesa.konduktor;
 
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,9 +12,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 public class TopBarFragment extends Fragment {
+
+   static TextView messageBox;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,8 @@ public class TopBarFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_top_bar, container, false);
     }
@@ -30,5 +37,16 @@ public class TopBarFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        messageBox = getView().findViewById(R.id.labelMessage1);
+        messageBox.setVisibility(View.INVISIBLE);
     }
+    public static void displayMessage(int priority, String message) {
+        messageBox.setVisibility(View.VISIBLE);
+        messageBox.getBackground().setColorFilter(Color.parseColor("#FF8000"), PorterDuff.Mode.DARKEN);
+        messageBox.setText(message);
+    }
+
+
+
 }

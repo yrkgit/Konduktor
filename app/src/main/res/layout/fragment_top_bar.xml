@@ -24,7 +24,7 @@
     <!--    MESSAGE TEXT-->
     <TextView
 
-        android:id="@+id/labelMessage"
+        android:id="@+id/labelMessage1"
         android:layout_width="477dp"
         android:layout_height="50.5dp"
         android:gravity="center"

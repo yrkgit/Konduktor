@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
 
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
+
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     boolean isPermissionGranted;
     MapView mapView;
     GoogleMap map;
-    TextView messageBox;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,14 +58,27 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_main);
 
-        messageBox = findViewById(R.id.labelMessage);
-        messageBox.setVisibility(View.INVISIBLE);
+
         mapView = findViewById(R.id.mapView);
+
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.topBarLayout, TopBarFragment.class, null)
+                .replace(R.id.topBarLayout,TopBarFragment.class,null)
                 .commit();
+
+
+
+//        FragmentManager fragmentManager = getFragmentManager();
+//        fragmentManager.beginTransaction()
+//                .replace(R.id.topBarLayout, TopBarFragment.class)
+//                .commit();
+
+
+//        FragmentManager fragmentManager =  getFragmentManager();
+//        fragmentManager.beginTransaction()
+//                .replace(R.id.topBarLayout, TopBarFragment.class, null)
+//                .commit();
 //
 //        btn1.setOnClickListener(view -> fragmentManager.beginTransaction()
 //                .replace(R.id.flFragment, FirstFragment.class, null)
@@ -246,6 +261,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         unboardingStats = findViewById(R.id.valueUnboardingStats);
         unboardingStats.setText("12");
+
+
     }
 
     @SuppressLint("MissingPermission")
@@ -255,15 +272,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         map.setMyLocationEnabled(true);
 
     }
-
-    public void displayMessage(int priority, String message) {
-        messageBox.setVisibility(View.VISIBLE);
-        messageBox.getBackground().setColorFilter(Color.parseColor("#FF8000"), PorterDuff.Mode.DARKEN);
-        messageBox.setText(message);
-    }
-
     //DO USUNIECIA - TESTY
     public void onClickButtonTest(View view) {
-        displayMessage(5,"Przycisk SOS - toaleta");
+        System.out.println("KLIK");
+        TopBarFragment.displayMessage(5,"Przycisk SOS - toaleta");
     }
+
 }
