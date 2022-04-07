@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,9 +43,15 @@ public class TopBarFragment extends Fragment {
         messageBox.setVisibility(View.INVISIBLE);
     }
     public static void displayMessage(int priority, String message) {
+        Handler handler = new Handler();
         messageBox.setVisibility(View.VISIBLE);
         messageBox.getBackground().setColorFilter(Color.parseColor("#FF8000"), PorterDuff.Mode.DARKEN);
         messageBox.setText(message);
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                messageBox.setVisibility(View.INVISIBLE);
+            }
+        }, 6000);
     }
 
 

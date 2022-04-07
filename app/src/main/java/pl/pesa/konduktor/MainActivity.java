@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         fragmentManager.beginTransaction()
                 .replace(R.id.topBarLayout,TopBarFragment.class,null)
                 .replace(R.id.sideBarLayout,SideBarFragment.class,null)
+                .replace(R.id.mainLayout, MainFragment.class,null)
                 .commit();
 
 
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         screenSetUp();
 
         //RUN IN PRESENTATION/DEMO MODE
-        demoMode();
+
 
     }
 
@@ -232,27 +233,27 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }).check();
     }
 
-    //Mode to present application with some example values
-    public void demoMode() {
-        TextView nextStop, speed, passengerStats, boardingStats, unboardingStats;
-
-        nextStop = findViewById(R.id.valueNextStop);
-        nextStop.setText("Bydgoszcz Główna");
-
-        speed = findViewById(R.id.valueSpeed);
-        speed.setText("70 km/h");
-
-        passengerStats = findViewById(R.id.valuePassengeStats);
-        passengerStats.setText("67");
-
-        boardingStats = findViewById(R.id.valueBoardingStats);
-        boardingStats.setText("40");
-
-        unboardingStats = findViewById(R.id.valueUnboardingStats);
-        unboardingStats.setText("12");
-
-
-    }
+//    //Mode to present application with some example values
+//    public void demoMode() {
+//        TextView nextStop, speed, passengerStats, boardingStats, unboardingStats;
+//
+//        nextStop = findViewById(R.id.valueNextStop);
+//        nextStop.setText("Bydgoszcz Główna");
+//
+//        speed = findViewById(R.id.valueSpeed);
+//        speed.setText("70 km/h");
+//
+//        passengerStats = findViewById(R.id.valuePassengeStats);
+//        passengerStats.setText("67");
+//
+//        boardingStats = findViewById(R.id.valueBoardingStats);
+//        boardingStats.setText("40");
+//
+//        unboardingStats = findViewById(R.id.valueUnboardingStats);
+//        unboardingStats.setText("12");
+//
+//
+//    }
 
     @SuppressLint("MissingPermission")
     @Override
@@ -265,6 +266,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onClickButtonTest(View view) {
         System.out.println("KLIK");
         TopBarFragment.displayMessage(5,"Przycisk SOS - toaleta");
+        MainFragment.demoMode();
     }
 
 }

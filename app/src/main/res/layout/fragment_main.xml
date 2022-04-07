@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGroundColor"
+    tools:context=".MainFragment">
+
+    <!--    NEXT_STOP-->
+    <!--    LABEL NEXT_STOP-->
+
+    <TextView
+        android:id="@+id/labelNextStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/next_stop"
+        android:textColor="@color/fontColor"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    VALUE NEXT_STOP-->
+
+    <TextView
+        android:id="@+id/valueNextStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="76.5dp"
+        android:textColor="@color/fontColor"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    SPEED-->
+    <!--    LABEL SPEED-->
+
+    <TextView
+        android:id="@+id/labelSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="139.5dp"
+        android:text="@string/speed"
+        android:textColor="@color/fontColor"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    VALUE SPEED-->
+
+    <TextView
+        android:id="@+id/valueSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="166.5dp"
+        android:textColor="@color/fontColor"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    PASSENGER_STATS-->
+    <!--    LABEL PASSENGER_STATS-->
+
+    <TextView
+        android:id="@+id/labelPassengeStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="230dp"
+        android:text="@string/passenger_stats"
+        android:textColor="@color/fontColor"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    VALUE PASSENGER_STATS-->
+
+    <TextView
+        android:id="@+id/valuePassengeStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="257dp"
+        android:textColor="@color/fontColor"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    STATION_STATS-->
+    <!--    LABEL STATION_STATS-->
+
+    <TextView
+        android:id="@+id/labelStationStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="319.5dp"
+        android:text="@string/station_stats"
+        android:textColor="@color/fontColor"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    LABEL BOARDING_STATS-->
+
+    <TextView
+        android:id="@+id/labeBoardingStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="354.5dp"
+        android:text="@string/boarding_stats"
+        android:textColor="@color/fontColor"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    LABEL UNBOARDING_STATS-->
+
+    <TextView
+        android:id="@+id/labelUnboardingStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="690dp"
+        android:layout_marginTop="382dp"
+        android:text="@string/unboarding_stats"
+        android:textColor="@color/fontColor"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    VALUE BOARDING_STATS-->
+
+    <TextView
+        android:id="@+id/valueBoardingStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="788.5dp"
+        android:layout_marginTop="347dp"
+        android:textColor="@color/fontColor"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    VALUE UNBOARDING_STATS-->
+
+    <TextView
+        android:id="@+id/valueUnboardingStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="788.5dp"
+        android:layout_marginTop="375.5dp"
+        android:textColor="@color/fontColor"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+    <!--    COMFORT SECTION-->
+    <!--    LINE 1-->
+    <View
+        android:id="@+id/bottomLine1"
+        android:layout_width="214.5dp"
+        android:layout_height="4.5dp"
+        android:layout_marginStart="10.5dp"
+        android:layout_marginTop="515.5dp"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--    BUTTON COMFORT-->
+    <TextView
+        android:id="@+id/labelComfort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="482dp"
+        android:text="@string/comfort"
+        android:textColor="@color/fontColor"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <!--    SIP SECTION-->
+    <!--    LINE 2-->
+    <View
+        android:id="@+id/bottomLine2"
+        android:layout_width="214.5dp"
+        android:layout_height="4.5dp"
+        android:layout_marginStart="252.5dp"
+        android:layout_marginTop="515.5dp"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    BUTTON SIP-->
+    <TextView
+        android:id="@+id/labelSip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="255.5dp"
+        android:layout_marginTop="482dp"
+        android:text="@string/sip"
+        android:textColor="@color/fontColor"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--    CCTV SECTION-->
+    <!--    LINE 3-->
+    <View
+        android:id="@+id/bottomLine3"
+        android:layout_width="214.5dp"
+        android:layout_height="4.5dp"
+        android:layout_marginStart="495dp"
+        android:layout_marginTop="515.5dp"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    BUTTON CCTV-->
+    <TextView
+        android:id="@+id/labelCctv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="548.5dp"
+        android:layout_marginTop="482dp"
+        android:text="@string/cctv"
+        android:textColor="@color/fontColor"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--    SZP SECTION-->
+    <!--    LINE 4-->
+
+    <View
+        android:id="@+id/bottomLine4"
+        android:layout_width="214.5dp"
+        android:layout_height="4.5dp"
+        android:layout_marginStart="737dp"
+        android:layout_marginTop="515.5dp"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    BUTTON SZP-->
+    <TextView
+        android:id="@+id/labelSzp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="760dp"
+        android:layout_marginTop="482dp"
+        android:text="@string/szp"
+        android:textColor="@color/fontColor"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
