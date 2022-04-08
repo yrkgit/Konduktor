@@ -257,7 +257,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         fragmentManager.beginTransaction()
                 .replace(R.id.mainLayout, ComfortFragment.class,null)
                 .commit();
-        android.app.FragmentManager
+        mapView.setVisibility(View.GONE);
+
     }
 
 }

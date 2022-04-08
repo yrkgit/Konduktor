@@ -51,16 +51,18 @@
         android:layout_marginTop="83dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
-<!--    MAP VIEW-->
-    <!--    actionFragment-->
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="569dp"
-        android:layout_height="473dp"
-        android:layout_marginStart="80.5dp"
-        android:layout_marginTop="83dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <!--    END actionFragment-->
+>
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="569dp"
+            android:layout_height="473dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </FrameLayout>
+    <!--    MAP VIEW-->
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
