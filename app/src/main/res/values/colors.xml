@@ -12,4 +12,5 @@
     <color name="backGroundColor">#0E1E46</color>
     <color name="fontColor">#FFFFFFFF</color>
     <color name="logOnButtonColor">#97BF14</color>
+    <color name="selectedButtonColor">#1AFFFFFF</color>
 </resources>

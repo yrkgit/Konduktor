@@ -14,6 +14,8 @@
     <string name="user_name">Nazwa użytkownika</string>
     <string name="password">Hasło</string>
     <string name="logon">Zaloguj</string>
+    <string name="outTemp">Temperatura na zewnątrz:</string>
+    <string name="inTemp">Temperatura wewnątrz:</string>
     <string name="appName">SMART CONDUCTOR</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

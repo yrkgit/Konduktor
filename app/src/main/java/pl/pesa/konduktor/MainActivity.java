@@ -5,7 +5,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
-
+import android.support.v4.app.*;
+import android.app.Fragment;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -21,6 +22,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextClock;
@@ -68,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .replace(R.id.sideBarLayout,SideBarFragment.class,null)
                 .replace(R.id.mainLayout, MainFragment.class,null)
                 .commit();
+
 
 
 //        btn1.setOnClickListener(view -> fragmentManager.beginTransaction()
@@ -233,27 +236,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }).check();
     }
 
-//    //Mode to present application with some example values
-//    public void demoMode() {
-//        TextView nextStop, speed, passengerStats, boardingStats, unboardingStats;
-//
-//        nextStop = findViewById(R.id.valueNextStop);
-//        nextStop.setText("Bydgoszcz Główna");
-//
-//        speed = findViewById(R.id.valueSpeed);
-//        speed.setText("70 km/h");
-//
-//        passengerStats = findViewById(R.id.valuePassengeStats);
-//        passengerStats.setText("67");
-//
-//        boardingStats = findViewById(R.id.valueBoardingStats);
-//        boardingStats.setText("40");
-//
-//        unboardingStats = findViewById(R.id.valueUnboardingStats);
-//        unboardingStats.setText("12");
-//
-//
-//    }
+
 
     @SuppressLint("MissingPermission")
     @Override
@@ -267,6 +250,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         System.out.println("KLIK");
         TopBarFragment.displayMessage(5,"Przycisk SOS - toaleta");
         MainFragment.demoMode();
+    }
+    public void onClickComfort(View view){
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.mainLayout, ComfortFragment.class,null)
+                .commit();
+        android.app.FragmentManager
     }
 
 }
