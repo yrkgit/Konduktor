@@ -258,7 +258,17 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .replace(R.id.mainLayout, ComfortFragment.class,null)
                 .commit();
         mapView.setVisibility(View.GONE);
+        SideBarFragment.showBackButton();
 
+    }
+    public void onClickBack(View view){
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.mainLayout, MainFragment.class,null)
+                .commit();
+        mapView.setVisibility(View.VISIBLE);
+        SideBarFragment.hideBackButton();
     }
 
 }

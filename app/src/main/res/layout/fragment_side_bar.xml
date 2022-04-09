@@ -42,5 +42,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_cog_solid" />
 
+    <!--    ICON BACK-->
+
+    <ImageView
+        android:id="@+id/backIcon"
+        android:layout_width="14.19dp"
+        android:layout_height="23.38dp"
+        android:layout_marginStart="19.91dp"
+        android:layout_marginTop="425dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_icon_left"
+        android:onClick="onClickBack"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
