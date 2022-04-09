@@ -40,20 +40,18 @@ public class TopBarFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         messageBox = getView().findViewById(R.id.labelMessage);
-        messageBox.setVisibility(View.INVISIBLE);
+        hideMessage();
     }
     public static void displayMessage(int priority, String message) {
         Handler handler = new Handler();
         messageBox.setVisibility(View.VISIBLE);
         messageBox.getBackground().setColorFilter(Color.parseColor("#FF8000"), PorterDuff.Mode.DARKEN);
         messageBox.setText(message);
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                messageBox.setVisibility(View.INVISIBLE);
-            }
-        }, 6000);
+        handler.postDelayed(() -> hideMessage(), 6000);
     }
-
+public static void hideMessage(){
+    messageBox.setVisibility(View.INVISIBLE);
+}
 
 
 }

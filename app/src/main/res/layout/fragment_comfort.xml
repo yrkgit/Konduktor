@@ -65,10 +65,51 @@
         app:layout_constraintStart_toEndOf="@+id/labelInTemp"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/car1"
+        android:layout_width="125dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="111dp"
+        android:layout_marginTop="172dp"
+        android:onClick="onClickButtonTest"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/car_design" />
+    <ImageView
+        android:id="@+id/car2"
+        android:layout_width="125dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="241dp"
+        android:layout_marginTop="172dp"
+        android:onClick="onClickButtonTest"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/car_design" />
+    <ImageView
+        android:id="@+id/car3"
+        android:layout_width="125dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="371dp"
+        android:layout_marginTop="172dp"
+        android:onClick="onClickButtonTest"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/car_design" />
+    <ImageView
+        android:id="@+id/car4"
+        android:layout_width="125dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="501dp"
+        android:layout_marginTop="172dp"
+        android:onClick="onClickButtonTest"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/car_design" />
 
 
     <!--    COMFORT SECTION-->
     <!--    LINE 1-->
+
     <View
         android:id="@+id/bottomLine1"
         android:layout_width="214.5dp"
