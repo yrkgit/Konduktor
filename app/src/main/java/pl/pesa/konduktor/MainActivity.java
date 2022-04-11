@@ -2,9 +2,16 @@ package pl.pesa.konduktor;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
+
+import android.content.Context;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.Build;
 import android.support.v4.app.*;
 import android.app.Fragment;
 
@@ -33,6 +40,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
@@ -43,9 +51,6 @@ import com.karumi.dexter.listener.single.PermissionListener;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-
-    // TO DO - Przerzucić menu boczne i górny pasek do osobnych klas
-    // FRAGMENTS
 
 
     boolean isPermissionGranted;
@@ -66,11 +71,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.topBarLayout,TopBarFragment.class,null)
-                .replace(R.id.sideBarLayout,SideBarFragment.class,null)
-                .replace(R.id.mainLayout, MainFragment.class,null)
+                .replace(R.id.topBarLayout, TopBarFragment.class, null)
+                .replace(R.id.sideBarLayout, SideBarFragment.class, null)
+                .replace(R.id.mainLayout, MainFragment.class, null)
                 .commit();
-
 
 
 //        btn1.setOnClickListener(view -> fragmentManager.beginTransaction()
@@ -90,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             mapView.onCreate(savedInstanceState);
         }
 
-//TO DO - Zweryfikować ustawienia ekranu dla onResume i reszty
+//TODO - Zweryfikować ustawienia ekranu dla onResume i reszty
 // Enable fullscreen / immersive mode
 
         screenSetUp();
@@ -237,38 +241,64 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
 
-
+    //TODO do posprzątania po metodzie zoomowania
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         map = googleMap;
         map.setMyLocationEnabled(true);
+        zoomOnMap();
 
     }
-    //DO USUNIECIA - TESTY
+
+    //TODO USUNIECIA - TESTY
     public void onClickButtonTest(View view) {
         System.out.println("KLIK");
-        TopBarFragment.displayMessage(5,"Przycisk SOS - toaleta");
+        TopBarFragment.displayMessage(5, "Przycisk SOS - toaleta");
         MainFragment.demoMode();
     }
-    public void onClickComfort(View view){
+
+    public void onClickComfort(View view) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.mainLayout, ComfortFragment.class,null)
+                .replace(R.id.mainLayout, ComfortFragment.class, null)
                 .commit();
         mapView.setVisibility(View.GONE);
         SideBarFragment.showBackButton();
 
     }
-    public void onClickBack(View view){
+
+    public void onClickBack(View view) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.mainLayout, MainFragment.class,null)
+                .replace(R.id.mainLayout, MainFragment.class, null)
                 .commit();
         mapView.setVisibility(View.VISIBLE);
         SideBarFragment.hideBackButton();
+    }
+// TODO dodać odświerzanie mapy na osobnym procesie
+    //TODO do posprzątania po metodzie zoomowania
+    @SuppressLint("MissingPermission")
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    public void zoomOnMap() {
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        Criteria criteria = new Criteria();
+
+        Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));
+        if (location != null) {
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 13));
+
+            CameraPosition cameraPosition = new CameraPosition.Builder()
+                    .target(new LatLng(location.getLatitude(), location.getLongitude()))      // Sets the center of the map to location user
+                    .zoom(17)                   // Sets the zoom
+                    .bearing(90)                // Sets the orientation of the camera to east
+                    .tilt(40)                   // Sets the tilt of the camera to 30 degrees
+                    .build();                   // Creates a CameraPosition from the builder
+            map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        }
     }
 
 }
