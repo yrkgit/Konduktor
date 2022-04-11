@@ -65,51 +65,277 @@
         app:layout_constraintStart_toEndOf="@+id/labelInTemp"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--    CAR_TEMP-->
+<FrameLayout
+    android:id="@+id/car1layout"
+    android:layout_width="125dp"
+    android:layout_height="37dp"
+    android:layout_marginStart="111dp"
+    android:layout_marginTop="172dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
     <ImageView
         android:id="@+id/car1"
-        android:layout_width="125dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="111dp"
-        android:layout_marginTop="172dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:onClick="onClickButtonTest"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/car_design" />
-    <ImageView
-        android:id="@+id/car2"
+
+    <TextView
+        android:id="@+id/currentTemp1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="20.5"
+        android:textColor="@color/fontColor"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/car1"
+        app:layout_constraintTop_toTopOf="@+id/car1" />
+</FrameLayout>
+    <FrameLayout
+        android:layout_width="125dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="40.5dp"
+        app:layout_constraintStart_toStartOf="@+id/car1layout"
+        app:layout_constraintTop_toTopOf="@+id/car1layout">
+        <TextView
+            android:id="@+id/setTemp1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="20"
+            android:textColor="@color/setTempColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/car1layout"
+            app:layout_constraintTop_toTopOf="@+id/car1layout" />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/car2layout"
         android:layout_width="125dp"
         android:layout_height="37dp"
         android:layout_marginStart="241dp"
         android:layout_marginTop="172dp"
-        android:onClick="onClickButtonTest"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/car_design" />
-    <ImageView
-        android:id="@+id/car3"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/car2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="onClickButtonTest"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/car_design" />
+
+        <TextView
+            android:id="@+id/currentTemp2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="19.5"
+            android:textColor="@color/fontColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/car2"
+            app:layout_constraintTop_toTopOf="@+id/car2" />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="125dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="40.5dp"
+        app:layout_constraintStart_toStartOf="@+id/car2layout"
+        app:layout_constraintTop_toTopOf="@+id/car2layout">
+        <TextView
+            android:id="@+id/setTemp2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="20.5"
+            android:textColor="@color/setTempColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/car2layout"
+            app:layout_constraintTop_toTopOf="@+id/car2layout" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/car3layout"
         android:layout_width="125dp"
         android:layout_height="37dp"
         android:layout_marginStart="371dp"
         android:layout_marginTop="172dp"
-        android:onClick="onClickButtonTest"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/car_design" />
-    <ImageView
-        android:id="@+id/car4"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/car3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="onClickButtonTest"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/car_design" />
+
+        <TextView
+            android:id="@+id/currentTemp3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="20.5"
+            android:textColor="@color/fontColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/car3"
+            app:layout_constraintTop_toTopOf="@+id/car3" />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="125dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="40.5dp"
+        app:layout_constraintStart_toStartOf="@+id/car3layout"
+        app:layout_constraintTop_toTopOf="@+id/car3layout">
+        <TextView
+            android:id="@+id/setTemp3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="21.5"
+            android:textColor="@color/setTempColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/car3layout"
+            app:layout_constraintTop_toTopOf="@+id/car3layout" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/car4layout"
         android:layout_width="125dp"
         android:layout_height="37dp"
         android:layout_marginStart="501dp"
         android:layout_marginTop="172dp"
-        android:onClick="onClickButtonTest"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/car4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="onClickButtonTest"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/car_design" />
+
+        <TextView
+            android:id="@+id/currentTemp4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="20"
+            android:textColor="@color/fontColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/car4"
+            app:layout_constraintTop_toTopOf="@+id/car4" />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="125dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="40.5dp"
+        app:layout_constraintStart_toStartOf="@+id/car4layout"
+        app:layout_constraintTop_toTopOf="@+id/car4layout">
+        <TextView
+            android:id="@+id/setTemp4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="21.5"
+            android:textColor="@color/setTempColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/car4layout"
+            app:layout_constraintTop_toTopOf="@+id/car4layout" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/car5layout"
+        android:layout_width="125dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="631dp"
+        android:layout_marginTop="172dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/car5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="onClickButtonTest"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/car_design" />
+
+        <TextView
+            android:id="@+id/currentTemp5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="22.5"
+            android:textColor="@color/fontColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/car5"
+            app:layout_constraintTop_toTopOf="@+id/car5" />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="125dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="40.5dp"
+        app:layout_constraintStart_toStartOf="@+id/car5layout"
+        app:layout_constraintTop_toTopOf="@+id/car5layout">
+        <TextView
+            android:id="@+id/setTemp5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="20.5"
+            android:textColor="@color/setTempColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/car5layout"
+            app:layout_constraintTop_toTopOf="@+id/car5layout" />
+    </FrameLayout>
+
+    <!--    TEMP EDIT-->
+
+    <ImageView
+        android:id="@+id/tempEditIcon"
+        android:layout_width="20dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="416dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/car_design" />
+        app:srcCompat="@drawable/ic_icon_edit"
+        android:onClick="onClickComfort"/>
 
+    <TextView
+        android:id="@+id/tempEditlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="296dp"
+        android:layout_marginTop="416.5dp"
+        android:text="@string/editTemp"
+        android:textColor="@color/setTempColor"
+        android:textSize="14dp"
+        android:onClick="onClickComfort"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--    COMFORT SECTION-->
     <!--    LINE 1-->
-
+//TODO - zmienić nazwy id - typ elementu na koncu nazwy
     <View
         android:id="@+id/bottomLine1"
         android:layout_width="214.5dp"

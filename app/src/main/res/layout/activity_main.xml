@@ -52,6 +52,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 >
+        //TODO do przerzucanie w CenterFragment
         <com.google.android.gms.maps.MapView
             android:id="@+id/mapView"
             android:layout_width="569dp"
