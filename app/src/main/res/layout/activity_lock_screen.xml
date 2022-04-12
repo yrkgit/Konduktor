@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGroundColor"
+    tools:context=".LogOn">
+
+
+    <!--    LOGO PESA-->
+
+    <ImageView
+        android:id="@+id/logoPesa"
+        android:layout_width="100.5dp"
+        android:layout_height="33.5dp"
+        android:layout_marginStart="10.5dp"
+        android:layout_marginTop="22.5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_logo_pesa__1_" />
+
+    <!--    LABEL LOGIN-->
+    <TextView
+        android:id="@+id/labelLock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="351.25dp"
+        android:layout_marginTop="31.5dp"
+        android:text="@string/lock"
+        android:textColor="@color/fontColor"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--    TOP SEPARATING LINE-->
+    <View
+        android:id="@+id/topLine"
+        android:layout_width="941dp"
+        android:layout_height="4.5dp"
+        android:layout_marginStart="10.5dp"
+        android:layout_marginTop="75.5dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    LOGON BOX-->
+    <View
+        android:id="@+id/logOnBox"
+        android:layout_width="495dp"
+        android:layout_height="465dp"
+        android:layout_marginStart="231dp"
+        android:layout_marginTop="104dp"
+        android:background="@color/whiteTransparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <FrameLayout
+        android:id="@+id/key1layout"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="293.5dp"
+        android:layout_marginTop="128dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/key1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/log_button" />
+
+        <TextView
+            android:id="@+id/key1label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="1"
+            android:textColor="@color/lockButtonColor"
+            android:textSize="50dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/key1"
+            app:layout_constraintTop_toTopOf="@+id/key1" />
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
