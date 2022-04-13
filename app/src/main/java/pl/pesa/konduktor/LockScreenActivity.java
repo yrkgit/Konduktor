@@ -14,7 +14,7 @@ public class LockScreenActivity extends AppCompatActivity {
         screenSetUp();
         setTheme(R.style.Theme_Konduktor);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_log_on);
+        setContentView(R.layout.activity_lock_screen);
 
 
 

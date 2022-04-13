@@ -51,7 +51,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_icon_lock"
-        android:onClick="onClickLock"/>/>
+        android:onClick="onClickLock"
+        tools:ignore="OnClick" />
 
 
     <!--    ICON BACK-->
@@ -65,6 +66,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_icon_left"
-        android:onClick="onClickBack"/>
+        android:onClick="onClickBack"
+        tools:ignore="OnClick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
