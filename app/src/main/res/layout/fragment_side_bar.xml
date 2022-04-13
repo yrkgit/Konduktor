@@ -50,7 +50,9 @@
         android:layout_marginTop="147.5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_icon_lock" />
+        app:srcCompat="@drawable/ic_icon_lock"
+        android:onClick="onClickLock"/>/>
+
 
     <!--    ICON BACK-->
 

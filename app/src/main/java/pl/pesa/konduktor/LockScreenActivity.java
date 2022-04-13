@@ -30,8 +30,5 @@ public class LockScreenActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 
-    public void onClickButton(View view) {
-        Intent intent = new Intent(LockScreenActivity.this, MainActivity.class );
-        startActivity(intent);
-    }
+
 }

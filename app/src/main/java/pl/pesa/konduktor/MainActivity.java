@@ -279,6 +279,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapView.setVisibility(View.VISIBLE);
         SideBarFragment.hideBackButton();
     }
+    public void onClickLock(View view) {
+        Intent intent = new Intent( MainActivity.this, LockScreenActivity.class );
+        startActivity(intent);
+
+
+    }
+
 // TODO dodać odświerzanie mapy na osobnym procesie
     //TODO do posprzątania po metodzie zoomowania
     @SuppressLint("MissingPermission")
