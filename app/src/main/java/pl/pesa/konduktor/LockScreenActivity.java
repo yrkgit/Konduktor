@@ -3,6 +3,7 @@ package pl.pesa.konduktor;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,5 +31,12 @@ public class LockScreenActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), R.string.applocked,Toast.LENGTH_SHORT);
+    }
+    public void onClickOk(View view) {
+        Intent intent = new Intent(LockScreenActivity.this, MainActivity.class );
+        startActivity(intent);
+    }
 }

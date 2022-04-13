@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backGroundColor"
-    tools:context=".LogOn">
+    tools:context=".LockScreenActivity">
 
 
     <!--    LOGO PESA-->
@@ -399,7 +399,8 @@
             android:textSize="50dp"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/keyOk"
-            app:layout_constraintTop_toTopOf="@+id/keyOk" />
+            app:layout_constraintTop_toTopOf="@+id/keyOk"
+            android:onClick="onClickOk"/>
     </FrameLayout>
 
 

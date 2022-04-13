@@ -18,6 +18,7 @@
     <string name="outTemp">Temperatura na zewnątrz:</string>
     <string name="inTemp">Temperatura wewnątrz:</string>
     <string name="editTemp">Edytuj zadaną temperaturę</string>
+    <string name="applocked">Aplikacja zablokowana</string>
     <string name="appName">SMART CONDUCTOR</string>
 
 </resources>
