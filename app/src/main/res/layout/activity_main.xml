@@ -16,8 +16,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--    mainFragment-->
 
@@ -28,8 +27,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="80dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--    sideBarFragment-->
     <FrameLayout
@@ -39,8 +37,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="89.5dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--  centerFragment-->
     <FrameLayout
@@ -50,8 +47,9 @@
         android:layout_marginStart="80.5dp"
         android:layout_marginTop="83dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
->
+        app:layout_constraintTop_toTopOf="parent">
+        <!--    MAP VIEW-->
+
         //TODO do przerzucanie w CenterFragment
         <com.google.android.gms.maps.MapView
             android:id="@+id/mapView"
@@ -62,7 +60,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </FrameLayout>
-    <!--    MAP VIEW-->
 
 
 

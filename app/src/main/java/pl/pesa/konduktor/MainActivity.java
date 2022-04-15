@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Context;
@@ -12,29 +11,18 @@ import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Build;
-import android.support.v4.app.*;
-import android.app.Fragment;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.text.Layout;
 import android.view.Menu;
 import android.view.View;
-import android.widget.TextClock;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -52,10 +40,9 @@ import com.karumi.dexter.listener.single.PermissionListener;
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
 
-
-    boolean isPermissionGranted;
-    MapView mapView;
-    GoogleMap map;
+    private boolean isPermissionGranted;
+    private MapView mapView;
+    private GoogleMap map;
 
 
     @Override
@@ -74,20 +61,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .replace(R.id.topBarLayout, TopBarFragment.class, null)
                 .replace(R.id.sideBarLayout, SideBarFragment.class, null)
                 .replace(R.id.mainLayout, MainFragment.class, null)
+                .addToBackStack(null)
                 .commit();
 
 
-//        btn1.setOnClickListener(view -> fragmentManager.beginTransaction()
-//                .replace(R.id.flFragment, FirstFragment.class, null)
-//                //TO DO - usunąć problem wielokrotnego wstecz przy kilkurazowym kliknieciu lub przejsciu miedzy fragmentami - wraca całą sieżkę kliknięć
-//                .addToBackStack(null)
-//                .commit());
-//
-//        btn2.setOnClickListener(view -> fragmentManager.beginTransaction()
-//                .replace(R.id.flFragment, SecondFragment.class, null)
-//                .addToBackStack(null)
-//                .commit());
-//
         checkMyPermission();
         if (isPermissionGranted) {
             mapView.getMapAsync(this);
@@ -95,12 +72,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
 
 //TODO - Zweryfikować ustawienia ekranu dla onResume i reszty
+
 // Enable fullscreen / immersive mode
-
         screenSetUp();
-
-        //RUN IN PRESENTATION/DEMO MODE
-
 
     }
 
@@ -220,7 +194,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Dexter.withContext(this).withPermission(Manifest.permission.ACCESS_FINE_LOCATION).withListener(new PermissionListener() {
             @Override
             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-                // Toast.makeText(MainActivity.this, "Permision Granted", Toast.LENGTH_SHORT).show();
                 isPermissionGranted = true;
             }
 
@@ -279,14 +252,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapView.setVisibility(View.VISIBLE);
         SideBarFragment.hideBackButton();
     }
+
     public void onClickLock(View view) {
-        Intent intent = new Intent( MainActivity.this, LockScreenActivity.class );
+        Intent intent = new Intent(MainActivity.this, LockScreenActivity.class);
         startActivity(intent);
 
 
     }
 
-// TODO dodać odświerzanie mapy na osobnym procesie
+    // TODO dodać odświerzanie mapy na osobnym procesie
     //TODO do posprzątania po metodzie zoomowania
     @SuppressLint("MissingPermission")
     @RequiresApi(api = Build.VERSION_CODES.M)

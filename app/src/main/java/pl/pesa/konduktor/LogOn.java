@@ -9,18 +9,15 @@ import android.widget.Toast;
 
 public class LogOn extends AppCompatActivity {
 
-    View logOnButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         screenSetUp();
         setTheme(R.style.Theme_Konduktor);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_on);
-
-
-
     }
-//TO DO WYRZUCI SCREENSETUP DO KLASY SCREEN
+//TODO WYRZUCI SCREENSETUP DO KLASY SCREEN
     public void screenSetUp() {
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE

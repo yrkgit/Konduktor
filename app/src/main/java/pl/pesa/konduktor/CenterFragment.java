@@ -19,7 +19,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 
 public class CenterFragment extends Fragment implements OnMapReadyCallback {
     MapView mapView;
-    GoogleMap map;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,9 +29,6 @@ public class CenterFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_center, container, false);
     }
 
@@ -44,15 +40,10 @@ public class CenterFragment extends Fragment implements OnMapReadyCallback {
 
     }
 
-    //Mode to present application with some example values
-    public static void demoMode() {
-
-    }
 
     @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
-                map = googleMap;
-        map.setMyLocationEnabled(true);
+        googleMap.setMyLocationEnabled(true);
     }
 }
