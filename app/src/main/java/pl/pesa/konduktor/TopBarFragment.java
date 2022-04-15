@@ -47,7 +47,7 @@ public class TopBarFragment extends Fragment {
         messageBox.setVisibility(View.VISIBLE);
         messageBox.getBackground().setColorFilter(Color.parseColor("#FF8000"), PorterDuff.Mode.DARKEN);
         messageBox.setText(message);
-        handler.postDelayed(() -> hideMessage(), 6000);
+        handler.postDelayed(TopBarFragment::hideMessage, 6000);
     }
 public static void hideMessage(){
     messageBox.setVisibility(View.INVISIBLE);
