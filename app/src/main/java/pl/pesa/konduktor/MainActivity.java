@@ -228,7 +228,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     //TODO USUNIECIA - TESTY
     public void onClickButtonTest(View view) {
         System.out.println("KLIK");
-        TopBarFragment.displayMessage(5, "Przycisk SOS - toaleta");
+        TopBarFragment.displayMessage(MessagePriority.HIGH, "Przycisk SOS - toaleta");
         MainFragment.demoMode();
     }
 

@@ -15,10 +15,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.Map;
+
 
 public class TopBarFragment extends Fragment {
 
-   static TextView messageBox;
+    static TextView messageBox;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,9 +31,6 @@ public class TopBarFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_top_bar, container, false);
     }
 
@@ -42,10 +41,11 @@ public class TopBarFragment extends Fragment {
         messageBox = getView().findViewById(R.id.labelMessage);
         hideMessage();
     }
-    public static void displayMessage(int priority, String message) {
+    //TODO create Enum - Priority to color
+    public static void displayMessage(MessagePriority priority, String message) {
         Handler handler = new Handler();
         messageBox.setVisibility(View.VISIBLE);
-        messageBox.getBackground().setColorFilter(Color.parseColor("#FF8000"), PorterDuff.Mode.DARKEN);
+        messageBox.getBackground().setColorFilter(Color.parseColor(priority.toString()), PorterDuff.Mode.DARKEN);
         messageBox.setText(message);
         handler.postDelayed(TopBarFragment::hideMessage, 6000);
     }

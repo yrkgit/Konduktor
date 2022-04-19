@@ -15,4 +15,5 @@
     <color name="selectedButtonColor">#1AFFFFFF</color>
     <color name="setTempColor">#97BF14</color>
     <color name="lockButtonColor">#97BF14</color>
+
 </resources>
