@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private boolean isPermissionGranted;
     private MapView mapView;
-    private GoogleMap map;
+    private GoogleMap googleMap;
 
 
     @Override
@@ -52,9 +52,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_main);
 
-
         mapView = findViewById(R.id.mapView);
-
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
@@ -64,28 +62,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .addToBackStack(null)
                 .commit();
 
-
         checkMyPermission();
         if (isPermissionGranted) {
             mapView.getMapAsync(this);
             mapView.onCreate(savedInstanceState);
         }
-
-//TODO - Zweryfikować ustawienia ekranu dla onResume i reszty
-
-// Enable fullscreen / immersive mode
         screenSetUp();
-
-    }
-
-    public void screenSetUp() {
-        this.getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 
     @Override
@@ -115,7 +97,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             mapView.getMapAsync(this);
             mapView.onStart();
         }
-
     }
 
     @Override
@@ -175,7 +156,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         screenSetUp();
     }
 
-
     @Override
     public void onPanelClosed(int featureId, @NonNull Menu menu) {
         super.onPanelClosed(featureId, menu);
@@ -187,6 +167,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onSaveInstanceState(outState);
         screenSetUp();
         mapView.onSaveInstanceState(outState);
+    }
+
+    // Enable fullscreen / immersive mode
+    //TODO - Zweryfikować ustawienia ekranu dla onResume i reszty
+    public void screenSetUp() {
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 
     //PERMISSION VERIFICATION USING EXTERNAL LIBRARY "DEXTER"
@@ -213,16 +205,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }).check();
     }
 
-
     //TODO do posprzątania po metodzie zoomowania
     @RequiresApi(api = Build.VERSION_CODES.M)
     @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
-        map = googleMap;
-        map.setMyLocationEnabled(true);
+        this.googleMap = googleMap;
+        this.googleMap.setMyLocationEnabled(true);
         zoomOnMap();
-
     }
 
     //TODO USUNIECIA - TESTY
@@ -233,18 +223,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void onClickComfort(View view) {
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.mainLayout, ComfortFragment.class, null)
                 .commit();
         mapView.setVisibility(View.GONE);
         SideBarFragment.showBackButton();
-
     }
 
     public void onClickBack(View view) {
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.mainLayout, MainFragment.class, null)
@@ -256,11 +243,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onClickLock(View view) {
         Intent intent = new Intent(MainActivity.this, LockScreenActivity.class);
         startActivity(intent);
-
-
     }
 
-    // TODO dodać odświerzanie mapy na osobnym procesie
+    //TODO dodać odświerzanie mapy na osobnym procesie
     //TODO do posprzątania po metodzie zoomowania
     @SuppressLint("MissingPermission")
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -270,7 +255,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));
         if (location != null) {
-            map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 13));
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 13));
 
             CameraPosition cameraPosition = new CameraPosition.Builder()
                     .target(new LatLng(location.getLatitude(), location.getLongitude()))      // Sets the center of the map to location user
@@ -278,7 +263,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     .bearing(90)                // Sets the orientation of the camera to east
                     .tilt(40)                   // Sets the tilt of the camera to 30 degrees
                     .build();                   // Creates a CameraPosition from the builder
-            map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         }
     }
 

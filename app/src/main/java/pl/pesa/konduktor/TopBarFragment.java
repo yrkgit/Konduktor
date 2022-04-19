@@ -41,7 +41,7 @@ public class TopBarFragment extends Fragment {
         messageBox = getView().findViewById(R.id.labelMessage);
         hideMessage();
     }
-    //TODO create Enum - Priority to color
+
     public static void displayMessage(MessagePriority priority, String message) {
         Handler handler = new Handler();
         messageBox.setVisibility(View.VISIBLE);
