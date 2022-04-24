@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setFragmentContent(R.id.topBarLayout, TopBarFragment.class);
         setFragmentContent(R.id.sideBarLayout, SideBarFragment.class);
         setFragmentContent(R.id.mainLayout, MainFragment.class);
+        setFragmentContent(R.id.bottomLayout, BottomMenuFragment.class);
 
         checkMyPermission();
         if (isPermissionGranted) {
@@ -222,6 +223,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public void onClickComfort(View view) {
         setFragmentContent(R.id.mainLayout, ComfortFragment.class);
+        mapView.setVisibility(View.GONE);
+        SideBarFragment.showBackButton();
+    }
+    public void onClickCctv(View view) {
+        setFragmentContent(R.id.mainLayout, CctvFragment.class);
         mapView.setVisibility(View.GONE);
         SideBarFragment.showBackButton();
     }

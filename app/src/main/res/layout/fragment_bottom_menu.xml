@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGroundColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BottomMenuFragment">
+
+    //TODO - zmienić nazwy id - typ elementu na koncu nazwy-->
+    <!--    COMFORT SECTION-->
+    <!--    LINE 1-->
+    <View
+        android:id="@+id/bottomLine1"
+        android:layout_width="214.5dp"
+        android:layout_height="4.5dp"
+        android:layout_marginStart="10.5dp"
+        android:layout_marginTop="33.5dp"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--    BUTTON COMFORT-->
+    <TextView
+        android:id="@+id/labelComfort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/comfort"
+        android:textColor="@color/fontColor"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:onClick="onClickComfort"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <!--    SIP SECTION-->
+    <!--    LINE 2-->
+    <View
+        android:id="@+id/bottomLine2"
+        android:layout_width="214.5dp"
+        android:layout_height="4.5dp"
+        android:layout_marginStart="252.5dp"
+        android:layout_marginTop="33.5dp"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    BUTTON SIP-->
+    <TextView
+        android:id="@+id/labelSip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="255.5dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/sip"
+        android:textColor="@color/fontColor"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--    CCTV SECTION-->
+    <!--    LINE 3-->
+    <View
+        android:id="@+id/bottomLine3"
+        android:layout_width="214.5dp"
+        android:layout_height="4.5dp"
+        android:layout_marginStart="495dp"
+        android:layout_marginTop="33.5dp"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    BUTTON CCTV-->
+    <TextView
+        android:id="@+id/labelCctv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="548.5dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/cctv"
+        android:textColor="@color/fontColor"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:onClick="onClickCctv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--    SZP SECTION-->
+    <!--    LINE 4-->
+
+    <View
+        android:id="@+id/bottomLine4"
+        android:layout_width="214.5dp"
+        android:layout_height="4.5dp"
+        android:layout_marginStart="737dp"
+        android:layout_marginTop="33.5dp"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    BUTTON SZP-->
+    <TextView
+        android:id="@+id/labelSzp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="760dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/szp"
+        android:textColor="@color/fontColor"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</FrameLayout>
