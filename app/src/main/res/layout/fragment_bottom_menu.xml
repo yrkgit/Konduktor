@@ -7,11 +7,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".BottomMenuFragment">
 
-    //TODO - zmienić nazwy id - typ elementu na koncu nazwy-->
+
     <!--    COMFORT SECTION-->
-    <!--    LINE 1-->
     <View
-        android:id="@+id/bottomLine1"
+        android:id="@+id/comfortButtonLine"
         android:layout_width="214.5dp"
         android:layout_height="4.5dp"
         android:layout_marginStart="10.5dp"
@@ -19,9 +18,8 @@
         android:background="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!--    BUTTON COMFORT-->
     <TextView
-        android:id="@+id/labelComfort"
+        android:id="@+id/comfortButtonLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="78dp"
@@ -37,9 +35,8 @@
 
 
     <!--    SIP SECTION-->
-    <!--    LINE 2-->
     <View
-        android:id="@+id/bottomLine2"
+        android:id="@+id/sipButtonLine"
         android:layout_width="214.5dp"
         android:layout_height="4.5dp"
         android:layout_marginStart="252.5dp"
@@ -47,10 +44,8 @@
         android:background="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!--    BUTTON SIP-->
     <TextView
-        android:id="@+id/labelSip"
+        android:id="@+id/sipButtonLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="255.5dp"
@@ -64,9 +59,8 @@
 
 
     <!--    CCTV SECTION-->
-    <!--    LINE 3-->
     <View
-        android:id="@+id/bottomLine3"
+        android:id="@+id/cctvButtonLine"
         android:layout_width="214.5dp"
         android:layout_height="4.5dp"
         android:layout_marginStart="495dp"
@@ -74,10 +68,8 @@
         android:background="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!--    BUTTON CCTV-->
     <TextView
-        android:id="@+id/labelCctv"
+        android:id="@+id/cctvButtonLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="548.5dp"
@@ -92,10 +84,8 @@
 
 
     <!--    SZP SECTION-->
-    <!--    LINE 4-->
-
     <View
-        android:id="@+id/bottomLine4"
+        android:id="@+id/szpButtonLine"
         android:layout_width="214.5dp"
         android:layout_height="4.5dp"
         android:layout_marginStart="737dp"
@@ -103,10 +93,8 @@
         android:background="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!--    BUTTON SZP-->
     <TextView
-        android:id="@+id/labelSzp"
+        android:id="@+id/szpButtonLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="760dp"
