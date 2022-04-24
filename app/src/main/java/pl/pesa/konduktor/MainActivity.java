@@ -37,12 +37,13 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, Screen {
 
 
     private boolean isPermissionGranted;
     private MapView mapView;
     private GoogleMap googleMap;
+    private FragmentManager fragmentManager;
 
 
     @Override
@@ -52,15 +53,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_main);
 
-        mapView = findViewById(R.id.mapView);
+        fragmentManager = getSupportFragmentManager();
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.topBarLayout, TopBarFragment.class, null)
-                .replace(R.id.sideBarLayout, SideBarFragment.class, null)
-                .replace(R.id.mainLayout, MainFragment.class, null)
-                .addToBackStack(null)
-                .commit();
+        mapView = findViewById(R.id.mapView);
+        setFragmentContent(R.id.topBarLayout, TopBarFragment.class);
+        setFragmentContent(R.id.sideBarLayout, SideBarFragment.class);
+        setFragmentContent(R.id.mainLayout, MainFragment.class);
 
         checkMyPermission();
         if (isPermissionGranted) {
@@ -171,6 +169,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     // Enable fullscreen / immersive mode
     //TODO - Zweryfikować ustawienia ekranu dla onResume i reszty
+    @Override
     public void screenSetUp() {
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -215,27 +214,20 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         zoomOnMap();
     }
 
-    //TODO USUNIECIA - TESTY
-    public void onClickButtonTest(View view) {
-        System.out.println("KLIK");
-        TopBarFragment.displayMessage(MessagePriority.HIGH, "Przycisk SOS - toaleta");
-        MainFragment.demoMode();
-    }
+//    //TODO USUNIECIA - TESTY
+//    public void onClickButtonTest(View view) {
+//        TopBarFragment.displayMessage(MessagePriorities.HIGH, "Przycisk SOS - toaleta");
+//        MainFragment.demoMode();
+//    }
 
     public void onClickComfort(View view) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.mainLayout, ComfortFragment.class, null)
-                .commit();
+        setFragmentContent(R.id.mainLayout, ComfortFragment.class);
         mapView.setVisibility(View.GONE);
         SideBarFragment.showBackButton();
     }
 
     public void onClickBack(View view) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.mainLayout, MainFragment.class, null)
-                .commit();
+        setFragmentContent(R.id.mainLayout ,MainFragment.class);
         mapView.setVisibility(View.VISIBLE);
         SideBarFragment.hideBackButton();
     }
@@ -243,6 +235,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onClickLock(View view) {
         Intent intent = new Intent(MainActivity.this, LockScreenActivity.class);
         startActivity(intent);
+    }
+
+    public void setFragmentContent(int fragmentToChange, Class fragmentNewContent){
+
+        fragmentManager.beginTransaction()
+                .replace(fragmentToChange, fragmentNewContent, null)
+                .addToBackStack(null)
+                .commit();
     }
 
     //TODO dodać odświerzanie mapy na osobnym procesie

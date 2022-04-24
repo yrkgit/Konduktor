@@ -11,7 +11,7 @@
     <color name="sideBarColor">#66F3F3F3</color>
     <color name="backGroundColor">#0E1E46</color>
     <color name="fontColor">#FFFFFFFF</color>
-    <color name="logOnButtonColor">#97BF14</color>
+    <color name="ButtonGreen">#97BF14</color>
     <color name="selectedButtonColor">#1AFFFFFF</color>
     <color name="setTempColor">#97BF14</color>
     <color name="lockButtonColor">#97BF14</color>

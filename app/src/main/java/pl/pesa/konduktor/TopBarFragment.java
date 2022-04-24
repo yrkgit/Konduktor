@@ -13,14 +13,14 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.util.Map;
 
 
 public class TopBarFragment extends Fragment {
 
-    static TextView messageBox;
+    private TextView messageBox;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,16 +42,16 @@ public class TopBarFragment extends Fragment {
         hideMessage();
     }
 
-    public static void displayMessage(MessagePriority priority, String message) {
-        Handler handler = new Handler();
-        messageBox.setVisibility(View.VISIBLE);
-        messageBox.getBackground().setColorFilter(Color.parseColor(priority.toString()), PorterDuff.Mode.DARKEN);
-        messageBox.setText(message);
-        handler.postDelayed(TopBarFragment::hideMessage, 6000);
+    //    public static void displayMessage(MessagePriorities priority, String message) {
+//        Handler handler = new Handler();
+//        messageBox.setVisibility(View.VISIBLE);
+//        messageBox.getBackground().setColorFilter(Color.parseColor(priority.toString()), PorterDuff.Mode.DARKEN);
+//        messageBox.setText(message);
+//        handler.postDelayed(TopBarFragment::hideMessage, 6000);
+//    }
+    public void hideMessage() {
+        messageBox.setVisibility(View.INVISIBLE);
     }
-public static void hideMessage(){
-    messageBox.setVisibility(View.INVISIBLE);
-}
 
 
 }

@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class LogOn extends AppCompatActivity {
+public class LogOn extends AppCompatActivity implements Screen{
 
 
     @Override
@@ -17,6 +17,7 @@ public class LogOn extends AppCompatActivity {
         setContentView(R.layout.activity_log_on);
     }
 //TODO WYRZUCI SCREENSETUP DO KLASY SCREEN
+    @Override
     public void screenSetUp() {
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE

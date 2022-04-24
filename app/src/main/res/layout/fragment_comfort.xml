@@ -78,7 +78,6 @@
         android:id="@+id/car1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:onClick="onClickButtonTest"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/car_design" />
@@ -127,7 +126,6 @@
             android:id="@+id/car2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="onClickButtonTest"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/car_design" />
@@ -175,7 +173,6 @@
             android:id="@+id/car3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="onClickButtonTest"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/car_design" />
@@ -223,7 +220,6 @@
             android:id="@+id/car4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="onClickButtonTest"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/car_design" />
@@ -271,7 +267,6 @@
             android:id="@+id/car5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="onClickButtonTest"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/car_design" />
@@ -317,8 +312,7 @@
         android:layout_marginTop="416dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_icon_edit"
-        android:onClick="onClickComfort"/>
+        app:srcCompat="@drawable/ic_icon_edit" />
 
     <TextView
         android:id="@+id/tempEditlabel"
@@ -329,9 +323,67 @@
         android:text="@string/editTemp"
         android:textColor="@color/setTempColor"
         android:textSize="14dp"
-        android:onClick="onClickComfort"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    SAVE BUTTON-->
+    <FrameLayout
+        android:id="@+id/saveButton"
+        android:layout_width="163.5dp"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="285.5dp"
+        android:layout_marginTop="405dp">
+    <ImageView
+        android:id="@+id/saveButtonImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_solid_design"
+        />
+    <TextView
+        android:id="@+id/saveButtonLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:layout_gravity="center"
+        android:textColor="@color/backGroundColor"
+        android:textStyle="bold"
+        android:textSize="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    </FrameLayout>
+
+    <!--    CANCEL BUTTON-->
+    <FrameLayout
+        android:id="@+id/cancelButton"
+        android:layout_width="75.5dp"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="550.5dp"
+        android:layout_marginTop="405dp">
+    <ImageView
+        android:id="@+id/cancelButtonImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_empty_design"
+        />
+    <TextView
+        android:id="@+id/cancelButtonLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/cancel"
+        android:textColor="@color/ButtonGreen"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    </FrameLayout>
 
     <!--    COMFORT SECTION-->
     <!--    LINE 1-->
@@ -356,7 +408,6 @@
         android:textColor="@color/selectedButtonColor"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:onClick="onClickComfort"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

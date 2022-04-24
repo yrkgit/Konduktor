@@ -17,7 +17,6 @@
         android:layout_marginTop="22.5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:onClick="onClickButtonTest"
         app:srcCompat="@drawable/ic_logo_pesa__1_" />
 
     <!--    MESSAGE -->

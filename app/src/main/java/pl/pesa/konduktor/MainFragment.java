@@ -13,7 +13,47 @@ import androidx.fragment.app.Fragment;
 
 
 public class MainFragment extends Fragment {
-   static TextView nextStop, speed, passengerStats, boardingStats, unboardingStats;
+   private TextView nextStop, speed, passengerStats, boardingStats, unboardingStats;
+
+    public TextView getNextStop() {
+        return nextStop;
+    }
+
+    public void setNextStop(TextView nextStop) {
+        this.nextStop = nextStop;
+    }
+
+    public TextView getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(TextView speed) {
+        this.speed = speed;
+    }
+
+    public TextView getPassengerStats() {
+        return passengerStats;
+    }
+
+    public void setPassengerStats(TextView passengerStats) {
+        this.passengerStats = passengerStats;
+    }
+
+    public TextView getBoardingStats() {
+        return boardingStats;
+    }
+
+    public void setBoardingStats(TextView boardingStats) {
+        this.boardingStats = boardingStats;
+    }
+
+    public TextView getUnboardingStats() {
+        return unboardingStats;
+    }
+
+    public void setUnboardingStats(TextView unboardingStats) {
+        this.unboardingStats = unboardingStats;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,15 +80,6 @@ public class MainFragment extends Fragment {
         passengerStats.setText("-");
         boardingStats.setText("-");
         unboardingStats.setText("-");
-    }
-
-    //Mode to present application with some example values
-    public static void demoMode() {
-        nextStop.setText("Bydgoszcz Główna");
-        speed.setText("70 km/h");
-        passengerStats.setText("67");
-        boardingStats.setText("40");
-        unboardingStats.setText("12");
     }
 
 }
