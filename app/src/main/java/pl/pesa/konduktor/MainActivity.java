@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private MapView mapView;
     private GoogleMap googleMap;
     private FragmentManager fragmentManager;
+    BottomMenuFragment bottomMenu;
 
 
     @Override
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_main);
 
         fragmentManager = getSupportFragmentManager();
+        bottomMenu=new BottomMenuFragment();
 
         mapView = findViewById(R.id.mapView);
         setFragmentContent(R.id.topBarLayout, TopBarFragment.class);
@@ -225,6 +227,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setFragmentContent(R.id.mainLayout, ComfortFragment.class);
         mapView.setVisibility(View.GONE);
         SideBarFragment.showBackButton();
+        bottomMenu.onClickComfortButton();
     }
     public void onClickCctv(View view) {
         setFragmentContent(R.id.mainLayout, CctvFragment.class);
@@ -244,7 +247,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void setFragmentContent(int fragmentToChange, Class fragmentNewContent){
-
         fragmentManager.beginTransaction()
                 .replace(fragmentToChange, fragmentNewContent, null)
                 .addToBackStack(null)
