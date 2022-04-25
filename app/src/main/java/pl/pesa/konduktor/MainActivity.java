@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_main);
 
         fragmentManager = getSupportFragmentManager();
-        bottomMenu=new BottomMenuFragment();
+        bottomMenu = new BottomMenuFragment();
 
         mapView = findViewById(R.id.mapView);
         setFragmentContent(R.id.topBarLayout, TopBarFragment.class);
@@ -229,16 +229,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         SideBarFragment.showBackButton();
         bottomMenu.onClickComfortButton(view);
     }
+
     public void onClickCctv(View view) {
         setFragmentContent(R.id.mainLayout, CctvFragment.class);
         mapView.setVisibility(View.GONE);
         SideBarFragment.showBackButton();
+        bottomMenu.onClickCctvButton(view);
     }
 
     public void onClickBack(View view) {
-        setFragmentContent(R.id.mainLayout ,MainFragment.class);
+        setFragmentContent(R.id.mainLayout, MainFragment.class);
         mapView.setVisibility(View.VISIBLE);
         SideBarFragment.hideBackButton();
+        bottomMenu.unClickOtherButtons();
     }
 
     public void onClickLock(View view) {
@@ -246,7 +249,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         startActivity(intent);
     }
 
-    public void setFragmentContent(int fragmentToChange, Class fragmentNewContent){
+    public void setFragmentContent(int fragmentToChange, Class fragmentNewContent) {
         fragmentManager.beginTransaction()
                 .replace(fragmentToChange, fragmentNewContent, null)
                 .addToBackStack(null)
