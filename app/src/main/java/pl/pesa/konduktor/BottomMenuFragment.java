@@ -12,9 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+/**
+ * Class describing application bottom menu. 
+ */
 
 public class BottomMenuFragment extends Fragment {
-
+//TODO SINGLETON
     private TextView comfortButton, sipButton, cctvButton, szpButton;
     MainActivity mainActivity;
 
@@ -41,8 +44,7 @@ public class BottomMenuFragment extends Fragment {
 
     }
 
-    public void onClickComfortButton() {
-    comfortButton.setText("TEST");
+    public void onClickComfortButton(View view) {
     }
     public void onClickSipButton() {
 

@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setFragmentContent(R.id.mainLayout, ComfortFragment.class);
         mapView.setVisibility(View.GONE);
         SideBarFragment.showBackButton();
-        bottomMenu.onClickComfortButton();
+        bottomMenu.onClickComfortButton(view);
     }
     public void onClickCctv(View view) {
         setFragmentContent(R.id.mainLayout, CctvFragment.class);
