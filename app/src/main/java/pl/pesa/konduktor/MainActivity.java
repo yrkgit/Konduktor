@@ -71,6 +71,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             mapView.onCreate(savedInstanceState);
         }
         screenSetUp();
+
+        //TODO clean socket listener
+
+        Thread thread = new Thread(new ServerListener());
+        thread.start();
     }
 
     @Override
