@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class LogOn extends AppCompatActivity implements Screen{
+public class LogonActivity extends AppCompatActivity implements Screen{
 
 
     @Override
@@ -29,7 +29,7 @@ public class LogOn extends AppCompatActivity implements Screen{
     }
 
     public void onClickButton(View view) {
-        Intent intent = new Intent(LogOn.this, MainActivity.class );
+        Intent intent = new Intent(LogonActivity.this, MainActivity.class );
         startActivity(intent);
     }
 }

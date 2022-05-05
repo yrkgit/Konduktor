@@ -18,7 +18,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 
 
 public class CenterFragment extends Fragment implements OnMapReadyCallback {
-    MapView mapView;
+    private MapView mapView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

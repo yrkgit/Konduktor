@@ -19,7 +19,6 @@ import android.widget.TextView;
 
 public class BottomMenuFragment extends Fragment {
     private TextView comfortButton, sipButton, cctvButton, szpButton;
-    MainActivity mainActivity;
 
 
     @Override

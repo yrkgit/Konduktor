@@ -37,6 +37,8 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, Screen {
 
 
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private MapView mapView;
     private GoogleMap googleMap;
     private FragmentManager fragmentManager;
-    BottomMenuFragment bottomMenu;
+    private BottomMenuFragment bottomMenu;
 
 
     @Override
@@ -235,6 +237,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapView.setVisibility(View.GONE);
         SideBarFragment.showBackButton();
         bottomMenu.onClickCctvButton(view);
+        ServerCommunication serverCommunication = new ServerCommunication();
+        System.out.println(" send to server");
+        serverCommunication.execute();
     }
 
     public void onClickBack(View view) {

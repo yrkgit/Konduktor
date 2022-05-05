@@ -22,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Konduktor">
         <activity
-            android:name=".LogOn"
+            android:name=".LogonActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="landscape"

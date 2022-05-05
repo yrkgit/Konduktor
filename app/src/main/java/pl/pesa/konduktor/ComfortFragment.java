@@ -15,11 +15,11 @@ import androidx.fragment.app.Fragment;
 
 
 public class ComfortFragment extends Fragment {
-    FrameLayout saveButton;
-    FrameLayout cancelButton;
+    private FrameLayout saveButton;
+    private FrameLayout cancelButton;
     //TODO - bound in one button
-    TextView tempEdit;
-    ImageView tempEditIcon;
+    private TextView tempEdit;
+    private ImageView tempEditIcon;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,9 +37,9 @@ public class ComfortFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         saveButton = getView().findViewById(R.id.saveButton);
-        cancelButton= getView().findViewById(R.id.cancelButton);
-        tempEdit= getView().findViewById(R.id.tempEditlabel);
-        tempEditIcon= getView().findViewById(R.id.tempEditIcon);
+        cancelButton = getView().findViewById(R.id.cancelButton);
+        tempEdit = getView().findViewById(R.id.tempEditlabel);
+        tempEditIcon = getView().findViewById(R.id.tempEditIcon);
 
         saveButton.setVisibility(View.INVISIBLE);
         cancelButton.setVisibility(View.INVISIBLE);
@@ -47,13 +47,15 @@ public class ComfortFragment extends Fragment {
         tempEdit.setOnClickListener(view1 -> enterTempEditMode());
         cancelButton.setOnClickListener(view1 -> closeTempEditMode());
     }
-    public void enterTempEditMode(){
+
+    public void enterTempEditMode() {
         tempEdit.setVisibility(View.INVISIBLE);
         tempEditIcon.setVisibility(View.INVISIBLE);
         saveButton.setVisibility(View.VISIBLE);
         cancelButton.setVisibility(View.VISIBLE);
     }
-    public void closeTempEditMode(){
+
+    public void closeTempEditMode() {
         tempEdit.setVisibility(View.VISIBLE);
         tempEditIcon.setVisibility(View.VISIBLE);
         saveButton.setVisibility(View.INVISIBLE);
