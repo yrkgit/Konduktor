@@ -32,4 +32,8 @@ public class LogonActivity extends AppCompatActivity implements Screen{
         Intent intent = new Intent(LogonActivity.this, MainActivity.class );
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {    }
+
 }

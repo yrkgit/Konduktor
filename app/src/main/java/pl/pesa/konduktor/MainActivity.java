@@ -48,6 +48,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private FragmentManager fragmentManager;
     private BottomMenuFragment bottomMenu;
 
+    @Override
+    public void onBackPressed() {
+        //TODO popup sure to log of?
+        Intent intent = new Intent(MainActivity.this, LogonActivity.class);
+        startActivity(intent);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

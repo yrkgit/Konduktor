@@ -32,11 +32,14 @@ public class LockScreenActivity extends AppCompatActivity implements Screen {
 
     @Override
     public void onBackPressed() {
-
+        logOf(LogonActivity.class);
     }
 
     public void onClickOk(View view) {
-        Intent intent = new Intent(LockScreenActivity.this, MainActivity.class);
+        logOf(MainActivity.class);
+    }
+    private void logOf(Class cls ){
+        Intent intent = new Intent(LockScreenActivity.this, cls);
         startActivity(intent);
     }
 }
