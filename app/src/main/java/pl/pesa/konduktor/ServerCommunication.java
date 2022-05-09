@@ -9,16 +9,17 @@ import java.net.Socket;
 
 public class ServerCommunication extends AsyncTask {
 
-    Socket socket;
-    DataOutputStream stream;
-    PrintWriter writer;
-    String message = "TEST komuniakcji";
+    private Socket socket;
+    private DataOutputStream stream;
+    private PrintWriter writer;
+    private String message = "TEST komuniakcji";
+
     @Override
     protected Object doInBackground(Object[] objects) {
 
         try {
-            socket = new Socket("192.168.0.12",7800);
-            writer=new PrintWriter(socket.getOutputStream());
+            socket = new Socket("10.1.0.189", 7800);
+            writer = new PrintWriter(socket.getOutputStream());
             writer.write(message);
             writer.flush();
             writer.close();
