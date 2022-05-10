@@ -12,12 +12,26 @@ public class ServerListener implements Runnable {
     private InputStreamReader inputStreamReader;
     private BufferedReader bufferedReader;
     private String message;
+    private boolean isServerRunning;
+
+
+    public ServerListener() {
+        isServerRunning = true;
+    }
+
+    public void stopServer() {
+        isServerRunning = false;
+    }
+
+    public void startServer() {
+        isServerRunning = true;
+    }
 
     @Override
     public void run() {
         try {
             serverSocket = new ServerSocket(7801);
-            while (true) {
+            while (isServerRunning) {
                 socket = serverSocket.accept();
                 inputStreamReader = new InputStreamReader(socket.getInputStream());
                 bufferedReader = new BufferedReader(inputStreamReader);

@@ -10,7 +10,6 @@ import java.net.Socket;
 public class ServerCommunication extends AsyncTask {
 
     private Socket socket;
-    private DataOutputStream stream;
     private PrintWriter writer;
     private String message = "TEST komuniakcji";
 
@@ -18,7 +17,7 @@ public class ServerCommunication extends AsyncTask {
     protected Object doInBackground(Object[] objects) {
 
         try {
-            socket = new Socket("192.168.0.16", 7800);
+            socket = new Socket("10.1.0.189", 7800);
             writer = new PrintWriter(socket.getOutputStream());
             writer.write(message);
             writer.flush();

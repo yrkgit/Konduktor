@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         screenSetUp();
 
-        //TODO clean socket listener
+        //TODO create clean socket listener
 
         Thread thread = new Thread(new ServerListener());
         thread.start();
