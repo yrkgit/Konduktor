@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class ServerListener implements Runnable {
+public class CommunicationFromHubListener implements Runnable {
     private Socket socket;
     private ServerSocket serverSocket;
     private InputStreamReader inputStreamReader;
@@ -15,7 +15,7 @@ public class ServerListener implements Runnable {
     private boolean isServerRunning;
 
 
-    public ServerListener() {
+    public CommunicationFromHubListener() {
         isServerRunning = true;
     }
 

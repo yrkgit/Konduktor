@@ -37,8 +37,6 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
-import java.io.IOException;
-
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, Screen {
 
 
@@ -81,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         //TODO create clean socket listener
 
-        Thread thread = new Thread(new ServerListener());
+        Thread thread = new Thread(new CommunicationFromHubListener());
         thread.start();
     }
 
@@ -249,9 +247,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapView.setVisibility(View.GONE);
         SideBarFragment.showBackButton();
         bottomMenu.onClickCctvButton(view);
-        ServerCommunication serverCommunication = new ServerCommunication();
+        StringToServerSender stringToServerSender = new StringToServerSender();
         System.out.println(" send to server");
-        serverCommunication.execute();
+        stringToServerSender.execute();
     }
 
     public void onClickBack(View view) {
