@@ -8,17 +8,18 @@
     tools:context=".SideBarFragment">
 
     <!--    SIDE BAR-->
+
+    <!--    ICON USER-->
+
     <View
         android:id="@+id/sideBar"
         android:layout_width="61dp"
-        android:layout_height="463.5dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
+        android:layout_height="0dp"
         android:background="@color/sideBarColor"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!--    ICON USER-->
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/userIcon"
@@ -62,11 +63,11 @@
         android:layout_width="14.19dp"
         android:layout_height="23.38dp"
         android:layout_marginStart="19.91dp"
-        android:layout_marginTop="425dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_icon_left"
+        android:layout_marginBottom="30dp"
         android:onClick="onClickBack"
+        app:layout_constraintBottom_toBottomOf="@+id/sideBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_icon_left"
         tools:ignore="OnClick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

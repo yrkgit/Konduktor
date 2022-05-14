@@ -24,16 +24,18 @@
     <TextView
 
         android:id="@+id/labelMessage"
-        android:layout_width="477dp"
+        android:layout_width="0dp"
         android:layout_height="50.5dp"
-        android:gravity="center"
-        android:background="@drawable/message_design"
-        android:textColor="@color/black"
-        android:textSize="14dp"
         android:layout_marginStart="170dp"
         android:layout_marginTop="14dp"
+        android:layout_marginEnd="224dp"
+        android:background="@drawable/message_design"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/connectionIcon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 <!--    ICON CONNECTION-->
 
@@ -41,32 +43,35 @@
         android:id="@+id/connectionIcon"
         android:layout_width="18.33dp"
         android:layout_height="26.11dp"
-        android:layout_marginStart="870dp"
         android:layout_marginTop="10.34dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="7dp"
+        app:layout_constraintEnd_toStartOf="@+id/textClock"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_con_color" />
 
     <!--    CLOCK-->
     <TextClock
+        android:id="@+id/textClock"
         android:layout_width="55dp"
         android:layout_height="28dp"
-        android:layout_marginStart="895.5dp"
         android:layout_marginTop="8.5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="21dp"
+        android:layout_marginEnd="9dp"
+        android:format12Hour="kk:mm"
         android:textColor="@color/white"
-        android:format12Hour="kk:mm"/>
+        android:textSize="21dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--    TOP SEPARATING LINE-->
     <View
         android:id="@+id/topLine"
-        android:layout_width="941dp"
+        android:layout_width="0dp"
         android:layout_height="4.5dp"
         android:layout_marginStart="10.5dp"
         android:layout_marginTop="75.5dp"
+        android:layout_marginEnd="8dp"
         android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -11,10 +11,9 @@
 
     <FrameLayout
         android:id="@+id/topBarLayout"
-        android:layout_width="960dp"
+        android:layout_width="0dp"
         android:layout_height="80dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,10 +21,11 @@
 
     <FrameLayout
         android:id="@+id/mainLayout"
-        android:layout_width="960dp"
-        android:layout_height="520dp"
-        android:layout_marginStart="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,41 +33,46 @@
     <FrameLayout
         android:id="@+id/sideBarLayout"
         android:layout_width="61dp"
-        android:layout_height="463.5dp"
-        android:layout_marginStart="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="89.5dp"
+        android:layout_marginBottom="46dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mainLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--  centerFragment-->
     <FrameLayout
         android:id="@+id/centerLayout"
-        android:layout_width="569dp"
-        android:layout_height="473dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="80.5dp"
         android:layout_marginTop="83dp"
+        android:layout_marginEnd="310dp"
+        android:layout_marginBottom="44dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mainLayout"
+        app:layout_constraintEnd_toEndOf="@+id/mainLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <!--    MAP VIEW-->
 
         //TODO do przerzucanie w CenterFragment
+
         <com.google.android.gms.maps.MapView
             android:id="@+id/mapView"
-            android:layout_width="569dp"
-            android:layout_height="473dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </FrameLayout>
+
     <FrameLayout
         android:id="@+id/bottomLayout"
         android:layout_width="960dp"
-        android:layout_height="match_parent"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="562dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 

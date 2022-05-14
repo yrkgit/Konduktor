@@ -37,6 +37,12 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
+import java.util.Calendar;
+
+import pl.pesa.konduktor.frames.FrameTypes;
+import pl.pesa.konduktor.frames.JsonSerializer;
+import pl.pesa.konduktor.frames.LogRequestFrame;
+
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, Screen {
 
 
@@ -51,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //TODO popup sure to log of?
         Intent intent = new Intent(MainActivity.this, LogonActivity.class);
         startActivity(intent);
-
     }
 
     @Override
@@ -247,7 +252,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapView.setVisibility(View.GONE);
         SideBarFragment.showBackButton();
         bottomMenu.onClickCctvButton(view);
-        StringToServerSender stringToServerSender = new StringToServerSender();
+
+        JsonSerializer serializedFrame = new JsonSerializer();
+        String content = serializedFrame.crateJson(new LogRequestFrame("1.0",
+                FrameTypes.LOGREQUEST,
+                Calendar.getInstance().getTimeInMillis(),
+                "Jan",
+                "haslo",
+                "10.1.1.1"));
+        StringToServerSender stringToServerSender = new StringToServerSender(content);
         System.out.println(" send to server");
         stringToServerSender.execute();
     }

@@ -14,12 +14,12 @@
         android:id="@+id/labelNextStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="690dp"
         android:layout_marginTop="50dp"
+        android:layout_marginEnd="137dp"
         android:text="@string/next_stop"
         android:textColor="@color/fontColor"
         android:textSize="14dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    VALUE NEXT_STOP-->
@@ -28,12 +28,12 @@
         android:id="@+id/valueNextStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="690dp"
         android:layout_marginTop="76.5dp"
+        android:layout_marginEnd="269dp"
         android:textColor="@color/fontColor"
         android:textSize="21dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    SPEED-->
@@ -45,9 +45,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="690dp"
         android:layout_marginTop="139.5dp"
+        android:layout_marginEnd="208dp"
         android:text="@string/speed"
         android:textColor="@color/fontColor"
         android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
