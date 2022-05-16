@@ -75,7 +75,7 @@ public class MainFragment extends Fragment {
         passengerStats = getView().findViewById(R.id.valuePassengeStats);
         boardingStats = getView().findViewById(R.id.valueBoardingStats);
         unboardingStats = getView().findViewById(R.id.valueUnboardingStats);
-        nextStop.setText("-");
+        nextStop.setText("------");
         speed.setText("-");
         passengerStats.setText("-");
         boardingStats.setText("-");

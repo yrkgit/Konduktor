@@ -7,9 +7,9 @@ public abstract class Frame {
     protected long utc;
 
     public Frame(String appVersion, FrameTypes typeOfFrame, long utc) {
-        setAppVersion(appVersion);
-        setTypeOfFrame(typeOfFrame);
-        setUtc(utc);
+        this.appVersion = appVersion;
+        this.typeOfFrame = typeOfFrame;
+        this.utc = utc;
     }
 
     public String getAppVersion() {

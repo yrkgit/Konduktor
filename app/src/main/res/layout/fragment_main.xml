@@ -28,12 +28,12 @@
         android:id="@+id/valueNextStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="76.5dp"
-        android:layout_marginEnd="269dp"
         android:textColor="@color/fontColor"
         android:textSize="21dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/labelNextStop"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    SPEED-->
@@ -43,14 +43,12 @@
         android:id="@+id/labelSpeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="690dp"
         android:layout_marginTop="139.5dp"
         android:layout_marginEnd="208dp"
         android:text="@string/speed"
         android:textColor="@color/fontColor"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    VALUE SPEED-->
@@ -59,12 +57,12 @@
         android:id="@+id/valueSpeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="690dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="166.5dp"
         android:textColor="@color/fontColor"
         android:textSize="21dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/labelSpeed"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    PASSENGER_STATS-->
@@ -74,12 +72,12 @@
         android:id="@+id/labelPassengeStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="690dp"
         android:layout_marginTop="230dp"
+        android:layout_marginEnd="154dp"
         android:text="@string/passenger_stats"
         android:textColor="@color/fontColor"
         android:textSize="14dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    VALUE PASSENGER_STATS-->
@@ -88,12 +86,12 @@
         android:id="@+id/valuePassengeStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="690dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="257dp"
         android:textColor="@color/fontColor"
         android:textSize="21dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/labelPassengeStats"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    STATION_STATS-->
@@ -103,12 +101,12 @@
         android:id="@+id/labelStationStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="690dp"
         android:layout_marginTop="319.5dp"
+        android:layout_marginEnd="135dp"
         android:text="@string/station_stats"
         android:textColor="@color/fontColor"
         android:textSize="14dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    LABEL BOARDING_STATS-->
@@ -117,12 +115,12 @@
         android:id="@+id/labeBoardingStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="690dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="354.5dp"
         android:text="@string/boarding_stats"
         android:textColor="@color/fontColor"
         android:textSize="14dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/labelStationStats"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    LABEL UNBOARDING_STATS-->
@@ -131,12 +129,12 @@
         android:id="@+id/labelUnboardingStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="690dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="382dp"
         android:text="@string/unboarding_stats"
         android:textColor="@color/fontColor"
         android:textSize="14dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/labelStationStats"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    VALUE BOARDING_STATS-->
@@ -145,12 +143,12 @@
         android:id="@+id/valueBoardingStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="788.5dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="347dp"
         android:textColor="@color/fontColor"
         android:textSize="21dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/labeBoardingStats"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    VALUE UNBOARDING_STATS-->
@@ -159,12 +157,11 @@
         android:id="@+id/valueUnboardingStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="788.5dp"
         android:layout_marginTop="375.5dp"
         android:textColor="@color/fontColor"
         android:textSize="21dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/valueBoardingStats"
         app:layout_constraintTop_toTopOf="parent" />
 
 
