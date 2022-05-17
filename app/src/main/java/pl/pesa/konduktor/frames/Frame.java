@@ -1,38 +1,57 @@
 package pl.pesa.konduktor.frames;
 
-public abstract class Frame {
-    protected String appVersion;
-    protected FrameTypes typeOfFrame;
+public class Frame {
+    private String appVersion;
+    private FrameTypes frameType;
 
-    protected long utc;
+    private long utc;
 
-    public Frame(String appVersion, FrameTypes typeOfFrame, long utc) {
+    public <T extends Builder<T>> Frame(Builder<T> tBuilder) {
+    }
+
+    public static Builder builder() {
+        return new Builder() {
+            public Builder getThis() {
+                return this;
+            }
+        };
+    }
+
+    public FrameTypes getFrameType() {
+        return frameType;
+    }
+
+    public abstract static class Builder<T extends Builder<T>> {
+        private String appVersion;
+        private FrameTypes frameType;
+
+        private long utc;
+
+        public abstract T getThis();
+
+        public T appVersion(String appVersion) {
+            this.appVersion = appVersion;
+            return this.getThis();
+        }
+
+        public T frameType(FrameTypes frameType) {
+            this.frameType = frameType;
+            return this.getThis();
+        }
+
+        public T utc(long utc) {
+            this.utc = utc;
+            return this.getThis();
+        }
+
+        public Frame build() {
+            return new Frame(this);
+        }
+    }
+
+    public Frame(String appVersion, FrameTypes frameType, long utc) {
         this.appVersion = appVersion;
-        this.typeOfFrame = typeOfFrame;
-        this.utc = utc;
-    }
-
-    public String getAppVersion() {
-        return appVersion;
-    }
-
-    public void setAppVersion(String appVersion) {
-        this.appVersion = appVersion;
-    }
-
-    public FrameTypes getTypeOfFrame() {
-        return typeOfFrame;
-    }
-
-    public void setTypeOfFrame(FrameTypes typeOfFrame) {
-        this.typeOfFrame = typeOfFrame;
-    }
-
-    public long getUtc() {
-        return utc;
-    }
-
-    public void setUtc(long utc) {
+        this.frameType = frameType;
         this.utc = utc;
     }
 
