@@ -6,16 +6,23 @@ import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class CommunicationFromHubListener implements Runnable {
+import pl.pesa.konduktor.frames.Frame;
+import pl.pesa.konduktor.frames.JsonDeserializer;
+
+public class CommunicationFromHubListener extends SocketListener implements Runnable {
     private Socket socket;
     private ServerSocket serverSocket;
     private InputStreamReader inputStreamReader;
     private BufferedReader bufferedReader;
-    private String message;
+    private String content;
     private boolean isServerRunning;
+    private LogonActivity logonActivity;
+    private JsonDeserializer deserializer;
+    private Frame frame;
 
 
-    public CommunicationFromHubListener() {
+    public CommunicationFromHubListener(LogonActivity logonActivity) {
+        this.logonActivity = logonActivity;
         isServerRunning = true;
     }
 
@@ -29,17 +36,21 @@ public class CommunicationFromHubListener implements Runnable {
 
     @Override
     public void run() {
-        try {
-            serverSocket = new ServerSocket(7801);
-            while (isServerRunning) {
-                socket = serverSocket.accept();
-                inputStreamReader = new InputStreamReader(socket.getInputStream());
-                bufferedReader = new BufferedReader(inputStreamReader);
-                message = bufferedReader.readLine();
-                System.out.println(message);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+        startSocketListener();
+        logonActivity.log();
+//        deserializer = new JsonDeserializer();
+//        try {
+//            content = startSocketListener();
+//            frame = deserializer.deserializeJsonToFrameObject(content);
+//            System.out.println("DOSTep udzielony " +frame.toString());
+//            if (frame.getAppVersion().equals("1.0")){
+//                logonActivity.log();
+//            }
+//
+//        } catch (Exception e) {
+//
+//        }
+
     }
 }

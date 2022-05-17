@@ -84,8 +84,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         //TODO create clean socket listener
 
-        Thread thread = new Thread(new CommunicationFromHubListener());
-        thread.start();
+//        Thread thread = new Thread(new CommunicationFromHubListener());
+//        thread.start();
     }
 
     @Override
@@ -253,16 +253,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         SideBarFragment.showBackButton();
         bottomMenu.onClickCctvButton(view);
 
-        JsonSerializer serializedFrame = new JsonSerializer();
-        String content = serializedFrame.crateJson(new LogRequestFrame("1.0",
-                FrameTypes.LOGREQUEST,
-                Calendar.getInstance().getTimeInMillis(),
-                "Jan",
-                "haslo",
-                "10.1.1.1"));
-        StringToServerSender stringToServerSender = new StringToServerSender(content);
-        System.out.println(" send to server");
-        stringToServerSender.execute();
     }
 
     public void onClickBack(View view) {
