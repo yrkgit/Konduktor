@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.ConnectException;
 import java.net.Socket;
 
 public class StringToServerSender extends AsyncTask {
@@ -21,14 +22,18 @@ public class StringToServerSender extends AsyncTask {
     protected Object doInBackground(Object[] objects) {
 
         try {
-            socket = new Socket("192.168.0.12", 7800);
+            //TODO get destination ip from config file
+            socket = new Socket("10.1.0.189", 7800);
             writer = new PrintWriter(socket.getOutputStream());
             writer.write(content);
             writer.flush();
             writer.close();
             socket.close();
             System.out.println(content + " send to server");
-        } catch (IOException e) {
+        } catch(ConnectException connectException){
+            System.out.println("Can't send frame to device");
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
         return null;

@@ -6,7 +6,10 @@ public class Frame {
 
     private long utc;
 
-    public <T extends Builder<T>> Frame(Builder<T> tBuilder) {
+    protected Frame(Builder<?> builder) {
+        this.appVersion = builder.appVersion;
+        this.frameType = builder.frameType;
+        this.utc = builder.utc;
     }
 
     public static Builder builder() {
@@ -49,10 +52,5 @@ public class Frame {
         }
     }
 
-    public Frame(String appVersion, FrameTypes frameType, long utc) {
-        this.appVersion = appVersion;
-        this.frameType = frameType;
-        this.utc = utc;
-    }
 
 }
