@@ -23,18 +23,22 @@
     <!--    TOP SEPARATING LINE-->
     <View
         android:id="@+id/topLine"
-        android:layout_width="941dp"
+        android:layout_width="0dp"
         android:layout_height="4.5dp"
         android:layout_marginStart="10.5dp"
         android:layout_marginTop="75.5dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    LOGON BOX-->
+
+    <!--    LABEL LOGIN-->
     <View
         android:id="@+id/logOnBox"
-        android:layout_width="377.33dp"
+        android:layout_width="377dp"
         android:layout_height="332dp"
         android:layout_marginStart="291.33dp"
         android:layout_marginTop="170dp"
@@ -42,11 +46,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--    LABEL LOGIN-->
     <TextView
         android:id="@+id/labelLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="123dp"
+        android:layout_height="34dp"
         android:layout_marginStart="351.25dp"
         android:layout_marginTop="193.5dp"
         android:text="@string/login"
@@ -75,14 +78,14 @@
         android:layout_height="26dp"
         android:layout_marginStart="351.25dp"
         android:layout_marginTop="284.5dp"
-        android:ems="10"
-        android:inputType="textPersonName"
         android:background="@drawable/edit_text_design"
         android:drawableRight="@drawable/ic_user_name_edit_text"
         android:drawablePadding="15dp"
+        android:ems="10"
+        android:inputType="textPersonName"
         android:text=""
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--    LABEL PASSWORD-->
     <TextView
@@ -104,12 +107,12 @@
         android:layout_height="26dp"
         android:layout_marginStart="351.25dp"
         android:layout_marginTop="337dp"
+        android:background="@drawable/edit_text_design"
         android:ems="10"
         android:inputType="textPassword"
-        android:background="@drawable/edit_text_design"
         android:text=""
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 
