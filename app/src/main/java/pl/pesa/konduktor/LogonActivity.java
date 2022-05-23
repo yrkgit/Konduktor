@@ -1,9 +1,14 @@
 package pl.pesa.konduktor;
 
+import static androidx.core.content.ContentProviderCompat.requireContext;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.text.format.Formatter;
 import android.view.View;
 import android.widget.EditText;
 
@@ -17,6 +22,7 @@ public class LogonActivity extends AppCompatActivity implements Screen {
 
     private EditText userName;
     private EditText password;
+    private String deviceIpAddress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,20 +53,16 @@ public class LogonActivity extends AppCompatActivity implements Screen {
 
     public void onClickButton(View view) {
 
+        deviceIpAddress = getDeviceIpAddress();
+
         JsonSerializer serializedFrame = new JsonSerializer();
-//        String content = serializedFrame.crateJson(new LogRequestFrame("1.0",
-//                FrameTypes.LOGREQUEST,
-//                Calendar.getInstance().getTimeInMillis(),
-//                userName.getText().toString(),
-//                password.getText().toString(),
-//                "10.1.1.1"));
         String content = serializedFrame.crateJson(LogRequestFrame.builder()
                 .appVersion("1.0")
                 .frameType(FrameTypes.LOGREQUEST)
                 .utc(Calendar.getInstance().getTimeInMillis())
                 .user(userName.getText().toString())
                 .pass(password.getText().toString())
-                .ipAddress("10.1.1.1")
+                .ipAddress(deviceIpAddress)
                 .build());
 
         StringToServerSender stringToServerSender = new StringToServerSender(content);
@@ -68,6 +70,12 @@ public class LogonActivity extends AppCompatActivity implements Screen {
         stringToServerSender.execute();
 
 
+    }
+
+    private String getDeviceIpAddress() {
+        WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+        String deviceIpAddress = Formatter.formatIpAddress(wifiManager.getConnectionInfo().getIpAddress());
+        return deviceIpAddress;
     }
 
     public void log() {

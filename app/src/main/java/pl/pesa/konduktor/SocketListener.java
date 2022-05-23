@@ -13,18 +13,22 @@ public class SocketListener {
     private BufferedReader bufferedReader;
     private String message;
 
-
     public String startSocketListener() {
         try {
             serverSocket = new ServerSocket(7801);
-
             socket = serverSocket.accept();
             inputStreamReader = new InputStreamReader(socket.getInputStream());
             bufferedReader = new BufferedReader(inputStreamReader);
             message = bufferedReader.readLine();
-            System.out.println(message);
-            return message;
 
+            System.out.println(message);
+
+            bufferedReader.close();
+            inputStreamReader.close();
+            socket.close();
+            serverSocket.close();
+
+            return message;
 
         } catch (IOException e) {
             e.printStackTrace();

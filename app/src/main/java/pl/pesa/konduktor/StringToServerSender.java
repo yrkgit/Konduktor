@@ -23,7 +23,7 @@ public class StringToServerSender extends AsyncTask {
 
         try {
             //TODO get destination ip from config file
-            socket = new Socket("10.1.0.189", 7800);
+            socket = new Socket("192.168.0.11", 7800);
             writer = new PrintWriter(socket.getOutputStream());
             writer.write(content);
             writer.flush();

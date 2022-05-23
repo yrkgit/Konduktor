@@ -32,6 +32,7 @@ public class AccessRequestFromHubListener extends SocketListener implements Runn
                 if(logResponseFrame.getPermission().equals(LogResponseTypes.GRANTED)){
                     logonActivity.log();
                 }else{
+                    run();
                     //TODO - add access denied message
                 }
 
