@@ -1,3 +1,5 @@
+/** Runnable class that opening socket (by invoking SocketListener) and starting listening to LogResponseFrame from ConductorHub and logon when receive permission   */
+
 package pl.pesa.konduktor;
 
 import pl.pesa.konduktor.frames.Frame;
@@ -6,14 +8,14 @@ import pl.pesa.konduktor.frames.FrameTypes;
 import pl.pesa.konduktor.frames.JsonDeserializer;
 import pl.pesa.konduktor.frames.LogResponseTypes;
 
-public class AccessFromHubListener extends SocketListener implements Runnable {
+public class AccessRequestFromHubListener extends SocketListener implements Runnable {
     private String content;
     private LogonActivity logonActivity;
     private JsonDeserializer deserializer;
     private Frame frame;
 
 
-    public AccessFromHubListener(LogonActivity logonActivity) {
+    public AccessRequestFromHubListener(LogonActivity logonActivity) {
         this.logonActivity = logonActivity;
     }
 //TODO fix log on problem after first received DENIED

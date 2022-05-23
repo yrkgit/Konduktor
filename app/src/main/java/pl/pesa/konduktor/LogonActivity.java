@@ -29,7 +29,7 @@ public class LogonActivity extends AppCompatActivity implements Screen {
         password = findViewById(R.id.editTexPassword);
         //TODO create clean socket listener
 
-        Thread thread = new Thread(new AccessFromHubListener(this));
+        Thread thread = new Thread(new AccessRequestFromHubListener(this));
         thread.start();
     }
 
