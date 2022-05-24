@@ -2,7 +2,6 @@ package pl.pesa.konduktor;
 
 import android.os.AsyncTask;
 
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ConnectException;
@@ -13,9 +12,11 @@ public class StringToServerSender extends AsyncTask {
     private Socket socket;
     private PrintWriter writer;
     private String content;
+    private String destinationIpAddress;
 
     public StringToServerSender(String content) {
         this.content = content;
+        destinationIpAddress ="192.168.0.11";
     }
 
     @Override
@@ -23,15 +24,15 @@ public class StringToServerSender extends AsyncTask {
 
         try {
             //TODO get destination ip from config file
-            socket = new Socket("10.1.0.189", 7800);
+            socket = new Socket(destinationIpAddress, 7800);
             writer = new PrintWriter(socket.getOutputStream());
             writer.write(content);
             writer.flush();
             writer.close();
             socket.close();
-            System.out.println(content + " send to server");
+            System.out.println(content + " send to "+ destinationIpAddress +" server");
         } catch(ConnectException connectException){
-            System.out.println("Can't send frame to device");
+            System.out.println("Can't send frame to "+ destinationIpAddress);
         }
         catch (IOException e) {
             e.printStackTrace();

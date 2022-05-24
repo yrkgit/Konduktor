@@ -53,21 +53,29 @@ public class LogonActivity extends AppCompatActivity implements Screen {
 
     public void onClickButton(View view) {
 
-        deviceIpAddress = getDeviceIpAddress();
+        //service mode
+        //TODO change to service mode log and password
+        if (userName.getText().toString().equals("asd")){
+            log();
+        }else{
+            deviceIpAddress = getDeviceIpAddress();
 
-        JsonSerializer serializedFrame = new JsonSerializer();
-        String content = serializedFrame.crateJson(LogRequestFrame.builder()
-                .appVersion("1.0")
-                .frameType(FrameTypes.LOGREQUEST)
-                .utc(Calendar.getInstance().getTimeInMillis())
-                .user(userName.getText().toString())
-                .pass(password.getText().toString())
-                .ipAddress(deviceIpAddress)
-                .build());
+            JsonSerializer serializedFrame = new JsonSerializer();
+            String content = serializedFrame.crateJson(LogRequestFrame.builder()
+                    .appVersion("1.0")
+                    .frameType(FrameTypes.LOGREQUEST)
+                    .utc(Calendar.getInstance().getTimeInMillis())
+                    .user(userName.getText().toString())
+                    .pass(password.getText().toString())
+                    .ipAddress(deviceIpAddress)
+                    .build());
 
-        StringToServerSender stringToServerSender = new StringToServerSender(content);
-        System.out.println(" send to server");
-        stringToServerSender.execute();
+            System.out.println("Trying to send: " +content +" to server");
+            StringToServerSender stringToServerSender = new StringToServerSender(content);
+            stringToServerSender.execute();
+        }
+
+
 
 
     }
