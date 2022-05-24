@@ -21,6 +21,7 @@ public class AccessRequestFromHubListener extends SocketListener implements Runn
 //TODO fix log on problem after first received DENIED
     @Override
     public void run() {
+        System.out.println("Start listening for LogResponse");
         deserializer = new JsonDeserializer();
         try {
             content = startSocketListener();

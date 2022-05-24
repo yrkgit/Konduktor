@@ -3,19 +3,18 @@ package pl.pesa.konduktor;
 import pl.pesa.konduktor.frames.Frame;
 import pl.pesa.konduktor.frames.FrameTypes;
 import pl.pesa.konduktor.frames.JsonDeserializer;
-import pl.pesa.konduktor.frames.LogResponseFrame;
-import pl.pesa.konduktor.frames.LogResponseTypes;
+
 
 public class DataFromHubListener extends SocketListener implements Runnable {
     private String content;
     private boolean isServerRunning;
-    private LogonActivity logonActivity;
+    private MainActivity mainActivity;
     private JsonDeserializer deserializer;
     private Frame frame;
 
 
-    public DataFromHubListener(LogonActivity logonActivity) {
-        this.logonActivity = logonActivity;
+    public DataFromHubListener(MainActivity mainActivity) {
+        this.mainActivity = mainActivity;
         isServerRunning = true;
     }
 
@@ -29,6 +28,7 @@ public class DataFromHubListener extends SocketListener implements Runnable {
 
     @Override
     public void run() {
+        System.out.println("Start listening for data");
         deserializer = new JsonDeserializer();
         while (isServerRunning) {
             try {

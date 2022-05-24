@@ -84,6 +84,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         //TODO create clean socket listener
 
+        Thread thread = new Thread(new DataFromHubListener(this));
+        thread.start();
 //        Thread thread = new Thread(new CommunicationFromHubListener());
 //        thread.start();
     }
