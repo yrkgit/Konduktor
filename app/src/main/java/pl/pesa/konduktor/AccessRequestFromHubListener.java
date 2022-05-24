@@ -53,6 +53,7 @@ public class AccessRequestFromHubListener extends SocketListener implements Runn
         } catch (Exception e) {
             logonActivity.showToast(logonActivity.getString(R.string.noResponse));
             System.out.println("ERROR during analyzing LogResponse");
+            e.printStackTrace();
         }
 
     }

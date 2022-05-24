@@ -25,6 +25,7 @@ public class LogonActivity extends AppCompatActivity implements Screen {
     private EditText userName;
     private EditText password;
     private String deviceIpAddress;
+    private Thread thread;
 
     public String getUserName() {
         return userName.toString();
@@ -40,7 +41,7 @@ public class LogonActivity extends AppCompatActivity implements Screen {
         userName = findViewById(R.id.editTextUserName);
         password = findViewById(R.id.editTexPassword);
 
-        Thread thread = new Thread(new AccessRequestFromHubListener(this));
+        thread = new Thread(new AccessRequestFromHubListener(this));
         thread.start();
     }
 
@@ -83,6 +84,8 @@ public class LogonActivity extends AppCompatActivity implements Screen {
     }
 
     public void log() {
+        thread.interrupt();
+        System.out.println("Wątek serwera" + thread.isAlive());
         Intent intent = new Intent(LogonActivity.this, MainActivity.class);
         startActivity(intent);
     }

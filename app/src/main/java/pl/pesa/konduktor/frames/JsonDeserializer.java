@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 
 public class JsonDeserializer {
     public Frame deserializeJsonToFrameObject(String content) {
+        System.out.println("Start deserializing");
         //TODO add try and not null
         Gson gson = new Gson();
         Frame frame = gson.fromJson(content, Frame.class);
