@@ -6,6 +6,7 @@ import pl.pesa.konduktor.frames.Frame;
 import pl.pesa.konduktor.frames.FrameTypes;
 import pl.pesa.konduktor.frames.JsonDeserializer;
 import pl.pesa.konduktor.frames.LogResponseTypes;
+import pl.pesa.konduktor.frames.LogResponseFrame;
 
 public class AccessRequestFromHubListener extends SocketListener implements Runnable {
     private String content;
