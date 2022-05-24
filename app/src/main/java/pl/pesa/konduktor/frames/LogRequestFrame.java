@@ -57,9 +57,5 @@ public class LogRequestFrame extends Frame implements Serializable{
     public String getIpAddress() {
         return ipAddress;
     }
-    @Override
-    public String getFrameTypeString() {
-        return getFrameType().toString();
-    }
 
 }

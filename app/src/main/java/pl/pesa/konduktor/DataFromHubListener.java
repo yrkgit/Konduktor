@@ -11,11 +11,14 @@ public class DataFromHubListener extends SocketListener implements Runnable {
     private MainActivity mainActivity;
     private JsonDeserializer deserializer;
     private Frame frame;
+    private int portToOpenNumber;
 
 
     public DataFromHubListener(MainActivity mainActivity) {
         this.mainActivity = mainActivity;
         isServerRunning = true;
+        //TODO - move port number to config
+        portToOpenNumber=7801;
     }
 
     public void stopServer() {
@@ -32,7 +35,7 @@ public class DataFromHubListener extends SocketListener implements Runnable {
         deserializer = new JsonDeserializer();
         while (isServerRunning) {
             try {
-                content = startSocketListener();
+                content = startSocketListener(portToOpenNumber);
                 System.out.println("Received frame : " + content);
                 frame = deserializer.deserializeJsonToFrameObject(content);
                 if (frame.getFrameType().equals(FrameTypes.DATA)) {

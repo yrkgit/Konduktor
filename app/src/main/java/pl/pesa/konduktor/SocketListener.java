@@ -13,9 +13,9 @@ public class SocketListener {
     private BufferedReader bufferedReader;
     private String message;
 
-    public String startSocketListener() {
+    public String startSocketListener(int portToOpenNumber) {
         try {
-            serverSocket = new ServerSocket(7801);
+            serverSocket = new ServerSocket(portToOpenNumber);
             socket = serverSocket.accept();
             inputStreamReader = new InputStreamReader(socket.getInputStream());
             bufferedReader = new BufferedReader(inputStreamReader);

@@ -34,11 +34,6 @@ public class LogResponseFrame extends Frame  implements Serializable{
         }
     }
 
-    @Override
-    public String getFrameTypeString() {
-        return getFrameType().toString();
-    }
-
     public LogResponseTypes getPermission() {
         return permission;
     }

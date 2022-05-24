@@ -1,6 +1,9 @@
-/** Runnable class that opening socket (by invoking SocketListener) and starting listening to LogResponseFrame from ConductorHub and logon when receive permission   */
+/**
+ * Runnable class that opening socket (by invoking SocketListener) and starting listening to LogResponseFrame from ConductorHub and logon when receive permission
+ */
 
 package pl.pesa.konduktor;
+
 
 import pl.pesa.konduktor.frames.Frame;
 import pl.pesa.konduktor.frames.FrameTypes;
@@ -13,34 +16,43 @@ public class AccessRequestFromHubListener extends SocketListener implements Runn
     private LogonActivity logonActivity;
     private JsonDeserializer deserializer;
     private Frame frame;
+    private int portToOpenNumber;
 
 
     public AccessRequestFromHubListener(LogonActivity logonActivity) {
         this.logonActivity = logonActivity;
+        //TODO - move port number to config
+        portToOpenNumber = 7801;
     }
-//TODO fix log on problem after first received DENIED
+
     @Override
     public void run() {
         System.out.println("Start listening for LogResponse");
         deserializer = new JsonDeserializer();
         try {
-            content = startSocketListener();
-            System.out.println("Received frame : " +content);
+            content = startSocketListener(portToOpenNumber);
+            System.out.println("Received frame : " + content);
             frame = deserializer.deserializeJsonToFrameObject(content);
-            if (frame.getFrameType().equals(FrameTypes.LOGRESPONSE)){
+            if (frame!=null && frame.getFrameType().equals(FrameTypes.LOGRESPONSE)) {
                 LogResponseFrame logResponseFrame = (LogResponseFrame) frame;
                 System.out.println(logResponseFrame.getPermission().toString());
-                if(logResponseFrame.getPermission().equals(LogResponseTypes.GRANTED)){
+                if (logResponseFrame.getPermission().equals(LogResponseTypes.GRANTED)) {
+                    System.out.println("Access GRANTED to user: "+logonActivity.getUserName());
                     logonActivity.log();
-                }else{
+                } else if (logResponseFrame.getPermission().equals(LogResponseTypes.DENIED)) {
+                    logonActivity.showToast(logonActivity.getString(R.string.accessDenied));
+                    System.out.println("Access DENIED");
                     run();
-                    //TODO - add access denied message
                 }
-
+            } else {
+                logonActivity.showToast(logonActivity.getString(R.string.noResponse));
+                System.out.println("No permission received from HUB");
+                run();
             }
 
         } catch (Exception e) {
-
+            logonActivity.showToast(logonActivity.getString(R.string.noResponse));
+            System.out.println("ERROR during analyzing LogResponse");
         }
 
     }

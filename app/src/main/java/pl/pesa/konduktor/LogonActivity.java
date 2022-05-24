@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.format.Formatter;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -24,6 +25,12 @@ public class LogonActivity extends AppCompatActivity implements Screen {
     private EditText password;
     private String deviceIpAddress;
 
+    public String getUserName() {
+        return userName.toString();
+    }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         screenSetUp();
@@ -33,7 +40,6 @@ public class LogonActivity extends AppCompatActivity implements Screen {
 
         userName = findViewById(R.id.editTextUserName);
         password = findViewById(R.id.editTexPassword);
-        //TODO create clean socket listener
 
         Thread thread = new Thread(new AccessRequestFromHubListener(this));
         thread.start();
@@ -55,9 +61,9 @@ public class LogonActivity extends AppCompatActivity implements Screen {
 
         //service mode
         //TODO change to service mode log and password
-        if (userName.getText().toString().equals("asd")){
+        if (userName.getText().toString().equals("asd")) {
             log();
-        }else{
+        } else {
             deviceIpAddress = getDeviceIpAddress();
 
             JsonSerializer serializedFrame = new JsonSerializer();
@@ -70,12 +76,10 @@ public class LogonActivity extends AppCompatActivity implements Screen {
                     .ipAddress(deviceIpAddress)
                     .build());
 
-            System.out.println("Trying to send: " +content +" to server");
+            System.out.println("Trying to send: " + content + " to server");
             StringToServerSender stringToServerSender = new StringToServerSender(content);
             stringToServerSender.execute();
         }
-
-
 
 
     }
@@ -95,4 +99,8 @@ public class LogonActivity extends AppCompatActivity implements Screen {
     public void onBackPressed() {
     }
 
+    public void showToast(final String toast)
+    {
+        runOnUiThread(() -> Toast.makeText(LogonActivity.this, toast, Toast.LENGTH_LONG).show());
+    }
 }

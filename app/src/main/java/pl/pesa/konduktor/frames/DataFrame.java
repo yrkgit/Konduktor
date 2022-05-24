@@ -3,13 +3,13 @@ package pl.pesa.konduktor.frames;
 public class DataFrame extends Frame implements Serializable{
     private String currentStop;
     private String nextStop;
-    private String ipAddress;
+    private String currentSpeed;
 
     public DataFrame(Builder builder) {
         super(builder);
         this.currentStop = builder.currentStop;
         this.nextStop = builder.nextStop;
-        this.ipAddress = builder.ipAddress;
+        this.currentSpeed = builder.currentSpeed;
     }
 
     public static Builder builder() {
@@ -19,7 +19,7 @@ public class DataFrame extends Frame implements Serializable{
     public static class Builder extends Frame.Builder<Builder> {
         private String currentStop;
         private String nextStop;
-        private String ipAddress;
+        private String currentSpeed;
 
         @Override
         public Builder getThis() {
@@ -36,8 +36,8 @@ public class DataFrame extends Frame implements Serializable{
             return this;
         }
 
-        public Builder ipAddress(String ipAddress) {
-            this.ipAddress = ipAddress;
+        public Builder ipAddress(String currentSpeed) {
+            this.currentSpeed = currentSpeed;
             return this;
         }
 
@@ -54,12 +54,8 @@ public class DataFrame extends Frame implements Serializable{
         return nextStop;
     }
 
-    public String getIpAddress() {
-        return ipAddress;
-    }
-    @Override
-    public String getFrameTypeString() {
-        return getFrameType().toString();
+    public String getCurrentSpeed() {
+        return currentSpeed;
     }
 
 }
