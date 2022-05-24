@@ -4,7 +4,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public interface Screen {
+public interface Screen  {
 
     void screenSetUp();
 }

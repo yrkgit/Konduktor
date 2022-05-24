@@ -23,7 +23,6 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -38,15 +37,10 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
-import java.util.Calendar;
-
-import pl.pesa.konduktor.frames.FrameTypes;
-import pl.pesa.konduktor.frames.JsonSerializer;
-import pl.pesa.konduktor.frames.LogRequestFrame;
-
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, Screen {
 
 
+    private final SetScreen setScreen = new SetScreen();
     private boolean isPermissionGranted;
     private MapView mapView;
     private GoogleMap googleMap;
@@ -83,12 +77,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         screenSetUp();
 
-        //TODO create clean socket listener
-
         Thread thread = new Thread(new DataFromHubListener(this));
         thread.start();
-//        Thread thread = new Thread(new CommunicationFromHubListener());
-//        thread.start();
+
     }
 
     @Override
@@ -191,16 +182,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     // Enable fullscreen / immersive mode
-    //TODO - Zweryfikować ustawienia ekranu dla onResume i reszty
     @Override
     public void screenSetUp() {
-        this.getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        setScreen.screenSetUp(this);
     }
 
     //PERMISSION VERIFICATION USING EXTERNAL LIBRARY "DEXTER"
@@ -293,7 +277,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     .target(new LatLng(location.getLatitude(), location.getLongitude()))      // Sets the center of the map to location user
                     .zoom(17)                   // Sets the zoom
                     .bearing(90)                // Sets the orientation of the camera to east
-                    .tilt(40)                   // Sets the tilt of the camera to 30 degrees
+                    .tilt(40)                   // Sets the tilt of the camera
                     .build();                   // Creates a CameraPosition from the builder
             googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         }
