@@ -3,7 +3,6 @@
 package pl.pesa.konduktor;
 
 import pl.pesa.konduktor.frames.Frame;
-import pl.pesa.konduktor.frames.LogResponseFrame;
 import pl.pesa.konduktor.frames.FrameTypes;
 import pl.pesa.konduktor.frames.JsonDeserializer;
 import pl.pesa.konduktor.frames.LogResponseTypes;
