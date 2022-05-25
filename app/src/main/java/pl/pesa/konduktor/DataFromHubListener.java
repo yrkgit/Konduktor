@@ -42,7 +42,7 @@ public class DataFromHubListener extends SocketListener implements Runnable {
                 if (frame.getFrameType().equals(FrameTypes.DATA)) {
                 DataFrame dataFrame = (DataFrame) frame;
                 System.out.println(dataFrame.getNextStop());
-
+                MainFragment.setData(dataFrame);
                 }
             } catch (Exception e) {
 

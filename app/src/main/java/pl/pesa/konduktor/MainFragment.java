@@ -60,7 +60,7 @@ public class MainFragment extends Fragment {
         }
     }
 
-    public void setData(DataFrame dataFrame) {
+    public static void setData(DataFrame dataFrame) {
         nextStopValue=dataFrame.getNextStop();
         speedValue=dataFrame.getCurrentSpeed();
         isValueChanged=true;
