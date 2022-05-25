@@ -18,9 +18,9 @@ public class MainFragment extends Fragment {
     private TextView nextStop, speed, passengerStats, boardingStats, unBoardingStats;
     private static String nextStopValue;
     private static String speedValue;
-    private static String passengerStatsValue;
-    private static String boardingStatsValue;
-    private static String unBoardingStatsValue;
+    private static int passengerStatsValue;
+    private static int boardingStatsValue;
+    private static int unBoardingStatsValue;
     private MainFragment mainFragment;
 
     @Override
@@ -54,15 +54,19 @@ public class MainFragment extends Fragment {
     }
 
     private void valuesUpdate() {
-            System.out.println("Aktualizuje wartości");
             nextStop.setText(nextStopValue);
             speed.setText(speedValue+" km/h");
+            passengerStats.setText(String.valueOf(passengerStatsValue));
+            boardingStats.setText(String.valueOf(boardingStatsValue));
+            unBoardingStats.setText(String.valueOf(unBoardingStatsValue));
     }
 
     public void setData(DataFrame dataFrame) {
-        System.out.println("SetData " +nextStopValue+speedValue);
         nextStopValue=dataFrame.getNextStop();
         speedValue=dataFrame.getCurrentSpeed();
+        passengerStatsValue=dataFrame.getPassengerStats();
+        boardingStatsValue=dataFrame.getBoardingStats();
+        unBoardingStatsValue= dataFrame.getUnBoardingStats();
         valuesUpdate();
 
     }

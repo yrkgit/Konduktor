@@ -5,11 +5,19 @@ public class DataFrame extends Frame implements Serializable{
     private String nextStop;
     private String currentSpeed;
 
+    private int passengerStats;
+    private int boardingStats;
+    private int unBoardingStats;
+
+
     public DataFrame(Builder builder) {
         super(builder);
         this.currentStop = builder.currentStop;
         this.nextStop = builder.nextStop;
         this.currentSpeed = builder.currentSpeed;
+        this.passengerStats = builder.passengerStats;
+        this.boardingStats = builder.boardingStats;
+        this.unBoardingStats = builder.unBoardingStats;
     }
 
     public static Builder builder() {
@@ -20,6 +28,10 @@ public class DataFrame extends Frame implements Serializable{
         private String currentStop;
         private String nextStop;
         private String currentSpeed;
+
+        private int passengerStats;
+        private int boardingStats;
+        private int unBoardingStats;
 
         @Override
         public Builder getThis() {
@@ -40,6 +52,18 @@ public class DataFrame extends Frame implements Serializable{
             this.currentSpeed = currentSpeed;
             return this;
         }
+        public Builder passengerStats(int passengerStats) {
+            this.passengerStats = passengerStats;
+            return this;
+        }
+        public Builder boardingStats(int boardingStats) {
+            this.boardingStats = boardingStats;
+            return this;
+        }
+        public Builder unBoardingStats(int unBoardingStats) {
+            this.unBoardingStats = unBoardingStats;
+            return this;
+        }
 
         public DataFrame build() {
             return new DataFrame(this);
@@ -58,4 +82,15 @@ public class DataFrame extends Frame implements Serializable{
         return currentSpeed;
     }
 
+    public int getPassengerStats() {
+        return passengerStats;
+    }
+
+    public int getBoardingStats() {
+        return boardingStats;
+    }
+
+    public int getUnBoardingStats() {
+        return unBoardingStats;
+    }
 }
