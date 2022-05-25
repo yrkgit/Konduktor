@@ -9,17 +9,17 @@ import pl.pesa.konduktor.frames.JsonDeserializer;
 public class DataFromHubListener extends SocketListener implements Runnable {
     private String content;
     private static boolean isServerRunning;
-    private MainActivity mainActivity;
+    private MainFragment mainFragment;
     private JsonDeserializer deserializer;
     private Frame frame;
     private int portToOpenNumber;
 
 
-    public DataFromHubListener(MainActivity mainActivity) {
-        this.mainActivity = mainActivity;
+    public DataFromHubListener(MainFragment mainFragment) {
+        this.mainFragment = mainFragment;
         isServerRunning = true;
         //TODO - move port number to config
-        portToOpenNumber=7801;
+        portToOpenNumber = 7801;
     }
 
     public static void stopServer() {
@@ -39,10 +39,10 @@ public class DataFromHubListener extends SocketListener implements Runnable {
                 content = startSocketListener(portToOpenNumber);
                 System.out.println("Received frame : " + content);
                 frame = deserializer.deserializeJsonToFrameObject(content);
-                if (frame.getFrameType().equals(FrameTypes.DATA)) {
-                DataFrame dataFrame = (DataFrame) frame;
-                System.out.println(dataFrame.getNextStop());
-                MainFragment.setData(dataFrame);
+                if (frame!= null && frame.getFrameType().equals(FrameTypes.DATA)) {
+                    DataFrame dataFrame = (DataFrame) frame;
+                    System.out.println(dataFrame.getNextStop());
+                    mainFragment.setData(dataFrame);
                 }
             } catch (Exception e) {
 

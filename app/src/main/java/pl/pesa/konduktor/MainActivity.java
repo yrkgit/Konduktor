@@ -77,8 +77,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         screenSetUp();
 
-        Thread thread = new Thread(new DataFromHubListener(this));
-        thread.start();
+
 
     }
 

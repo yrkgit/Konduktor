@@ -72,6 +72,7 @@ public class LogonActivity extends AppCompatActivity implements Screen {
             System.out.println("Trying to send: " + content + " to server");
             StringToServerSender stringToServerSender = new StringToServerSender(content);
             stringToServerSender.execute();
+
         }
 
 

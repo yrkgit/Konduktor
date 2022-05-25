@@ -16,12 +16,12 @@ import pl.pesa.konduktor.frames.DataFrame;
 
 public class MainFragment extends Fragment {
     private TextView nextStop, speed, passengerStats, boardingStats, unBoardingStats;
-    private static boolean isValueChanged;
     private static String nextStopValue;
     private static String speedValue;
     private static String passengerStatsValue;
     private static String boardingStatsValue;
     private static String unBoardingStatsValue;
+    private MainFragment mainFragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,27 +43,28 @@ public class MainFragment extends Fragment {
         passengerStats = getView().findViewById(R.id.valuePassengeStats);
         boardingStats = getView().findViewById(R.id.valueBoardingStats);
         unBoardingStats = getView().findViewById(R.id.valueUnboardingStats);
-        nextStop.setText("------");
+        nextStop.setText("-");
         speed.setText("-");
         passengerStats.setText("-");
         boardingStats.setText("-");
         unBoardingStats.setText("-");
-        valuesUpdate();
+
+        Thread thread = new Thread(new DataFromHubListener(this));
+        thread.start();;
     }
 
     private void valuesUpdate() {
-        while (isValueChanged) {
             System.out.println("Aktualizuje wartości");
             nextStop.setText(nextStopValue);
-            speed.setText(speedValue);
-            isValueChanged=false;
-        }
+            speed.setText(speedValue+" km/h");
     }
 
-    public static void setData(DataFrame dataFrame) {
+    public void setData(DataFrame dataFrame) {
+        System.out.println("SetData " +nextStopValue+speedValue);
         nextStopValue=dataFrame.getNextStop();
         speedValue=dataFrame.getCurrentSpeed();
-        isValueChanged=true;
+        valuesUpdate();
+
     }
 
 }
