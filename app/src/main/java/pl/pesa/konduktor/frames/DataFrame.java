@@ -26,17 +26,17 @@ public class DataFrame extends Frame implements Serializable{
             return this;
         }
 
-        public Builder currentStop(String user) {
-            this.currentStop = user;
+        public Builder currentStop(String currentStop) {
+            this.currentStop = currentStop;
             return this;
         }
 
-        public Builder nextStop(String pass) {
-            this.nextStop = pass;
+        public Builder nextStop(String nextStop) {
+            this.nextStop = nextStop;
             return this;
         }
 
-        public Builder ipAddress(String currentSpeed) {
+        public Builder currentSpeed(String currentSpeed) {
             this.currentSpeed = currentSpeed;
             return this;
         }

@@ -1,5 +1,6 @@
 package pl.pesa.konduktor;
 
+import pl.pesa.konduktor.frames.DataFrame;
 import pl.pesa.konduktor.frames.Frame;
 import pl.pesa.konduktor.frames.FrameTypes;
 import pl.pesa.konduktor.frames.JsonDeserializer;
@@ -7,7 +8,7 @@ import pl.pesa.konduktor.frames.JsonDeserializer;
 
 public class DataFromHubListener extends SocketListener implements Runnable {
     private String content;
-    private boolean isServerRunning;
+    private static boolean isServerRunning;
     private MainActivity mainActivity;
     private JsonDeserializer deserializer;
     private Frame frame;
@@ -21,11 +22,11 @@ public class DataFromHubListener extends SocketListener implements Runnable {
         portToOpenNumber=7801;
     }
 
-    public void stopServer() {
+    public static void stopServer() {
         isServerRunning = false;
     }
 
-    public void startServer() {
+    public static void startServer() {
         isServerRunning = true;
     }
 
@@ -39,8 +40,8 @@ public class DataFromHubListener extends SocketListener implements Runnable {
                 System.out.println("Received frame : " + content);
                 frame = deserializer.deserializeJsonToFrameObject(content);
                 if (frame.getFrameType().equals(FrameTypes.DATA)) {
-//                LogResponseFrame logResponseFrame = (LogResponseFrame) frame;
-//                System.out.println(logResponseFrame.getPermission().toString());
+                DataFrame dataFrame = (DataFrame) frame;
+                System.out.println(dataFrame.getNextStop());
 
                 }
             } catch (Exception e) {

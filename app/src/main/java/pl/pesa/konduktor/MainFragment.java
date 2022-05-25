@@ -11,49 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import pl.pesa.konduktor.frames.DataFrame;
+
 
 public class MainFragment extends Fragment {
-   private TextView nextStop, speed, passengerStats, boardingStats, unboardingStats;
-
-    public TextView getNextStop() {
-        return nextStop;
-    }
-
-    public void setNextStop(TextView nextStop) {
-        this.nextStop = nextStop;
-    }
-
-    public TextView getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(TextView speed) {
-        this.speed = speed;
-    }
-
-    public TextView getPassengerStats() {
-        return passengerStats;
-    }
-
-    public void setPassengerStats(TextView passengerStats) {
-        this.passengerStats = passengerStats;
-    }
-
-    public TextView getBoardingStats() {
-        return boardingStats;
-    }
-
-    public void setBoardingStats(TextView boardingStats) {
-        this.boardingStats = boardingStats;
-    }
-
-    public TextView getUnboardingStats() {
-        return unboardingStats;
-    }
-
-    public void setUnboardingStats(TextView unboardingStats) {
-        this.unboardingStats = unboardingStats;
-    }
+    private TextView nextStop, speed, passengerStats, boardingStats, unBoardingStats;
+    private static boolean isValueChanged;
+    private static String nextStopValue;
+    private static String speedValue;
+    private static String passengerStatsValue;
+    private static String boardingStatsValue;
+    private static String unBoardingStatsValue;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,12 +42,28 @@ public class MainFragment extends Fragment {
         speed = getView().findViewById(R.id.valueSpeed);
         passengerStats = getView().findViewById(R.id.valuePassengeStats);
         boardingStats = getView().findViewById(R.id.valueBoardingStats);
-        unboardingStats = getView().findViewById(R.id.valueUnboardingStats);
+        unBoardingStats = getView().findViewById(R.id.valueUnboardingStats);
         nextStop.setText("------");
         speed.setText("-");
         passengerStats.setText("-");
         boardingStats.setText("-");
-        unboardingStats.setText("-");
+        unBoardingStats.setText("-");
+        valuesUpdate();
+    }
+
+    private void valuesUpdate() {
+        while (isValueChanged) {
+            System.out.println("Aktualizuje wartości");
+            nextStop.setText(nextStopValue);
+            speed.setText(speedValue);
+            isValueChanged=false;
+        }
+    }
+
+    public void setData(DataFrame dataFrame) {
+        nextStopValue=dataFrame.getNextStop();
+        speedValue=dataFrame.getCurrentSpeed();
+        isValueChanged=true;
     }
 
 }
