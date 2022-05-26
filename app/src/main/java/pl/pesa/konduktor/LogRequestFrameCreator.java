@@ -9,9 +9,8 @@ import pl.pesa.konduktor.frames.LogRequestFrame;
 public class LogRequestFrameCreator {
     private DeviceIp deviceIp = new DeviceIp();
     private String deviceIpAddress;
+
     public String crateLogRequestFrame(String userName, String password, String deviceIpAddress) {
-        //service mode
-        //TODO change to service mode log and password
 
         this.deviceIpAddress = deviceIpAddress;
 
@@ -24,7 +23,6 @@ public class LogRequestFrameCreator {
                 .pass(password)
                 .ipAddress(deviceIpAddress)
                 .build());
-
 
         return content;
     }
