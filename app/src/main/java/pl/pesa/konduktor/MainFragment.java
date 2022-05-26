@@ -21,7 +21,7 @@ public class MainFragment extends Fragment {
     private static int passengerStatsValue;
     private static int boardingStatsValue;
     private static int unBoardingStatsValue;
-    private MainFragment mainFragment;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

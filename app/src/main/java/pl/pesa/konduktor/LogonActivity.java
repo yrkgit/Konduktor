@@ -21,10 +21,12 @@ import pl.pesa.konduktor.frames.LogRequestFrame;
 
 public class LogonActivity extends AppCompatActivity implements Screen {
 
-    private final SetScreen setScreen = new SetScreen();
+    private SetScreen setScreen;
+    private LogRequestFrameCreator logRequestFrameCreator;
     private EditText userName;
     private EditText password;
-    private String deviceIpAddress;
+    private DeviceIp deviceIp;
+    private String frameContent;
     private Thread thread;
 
     public String getUserName() {
@@ -33,6 +35,10 @@ public class LogonActivity extends AppCompatActivity implements Screen {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setScreen = new SetScreen();
+        logRequestFrameCreator = new LogRequestFrameCreator();
+        deviceIp = new DeviceIp();
+
         screenSetUp();
         setTheme(R.style.Theme_Konduktor);
         super.onCreate(savedInstanceState);
@@ -51,37 +57,16 @@ public class LogonActivity extends AppCompatActivity implements Screen {
     }
 
     public void onClickButton(View view) {
-
-        //service mode
         //TODO change to service mode log and password
         if (userName.getText().toString().equals("asd")) {
             log();
         } else {
-            deviceIpAddress = getDeviceIpAddress();
-
-            JsonSerializer serializedFrame = new JsonSerializer();
-            String content = serializedFrame.crateJson(LogRequestFrame.builder()
-                    .appVersion("1.0")
-                    .frameType(FrameTypes.LOGREQUEST)
-                    .utc(Calendar.getInstance().getTimeInMillis())
-                    .user(userName.getText().toString())
-                    .pass(password.getText().toString())
-                    .ipAddress(deviceIpAddress)
-                    .build());
-
-            System.out.println("Trying to send: " + content + " to server");
-            StringToServerSender stringToServerSender = new StringToServerSender(content);
+            frameContent=logRequestFrameCreator.crateLogRequestFrame(
+                    userName.getText().toString(), password.getText().toString(), deviceIp.getDeviceIpAddress(this));
+            System.out.println("Trying to send: " + frameContent + " to server");
+            StringToServerSender stringToServerSender = new StringToServerSender(frameContent);
             stringToServerSender.execute();
-
         }
-
-
-    }
-
-    private String getDeviceIpAddress() {
-        WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
-        String deviceIpAddress = Formatter.formatIpAddress(wifiManager.getConnectionInfo().getIpAddress());
-        return deviceIpAddress;
     }
 
     public void log() {
@@ -95,8 +80,7 @@ public class LogonActivity extends AppCompatActivity implements Screen {
     public void onBackPressed() {
     }
 
-    public void showToast(final String toast)
-    {
+    public void showToast(final String toast) {
         runOnUiThread(() -> Toast.makeText(LogonActivity.this, toast, Toast.LENGTH_LONG).show());
     }
 }
