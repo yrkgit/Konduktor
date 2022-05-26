@@ -17,7 +17,7 @@ public class DataFromHubListener extends SocketListener implements Runnable {
 
     public DataFromHubListener(MainFragment mainFragment) {
         this.mainFragment = mainFragment;
-        isServerRunning = true;
+        isServerRunning = false;
         //TODO - move port number to config
         portToOpenNumber = 7802;
     }
@@ -34,7 +34,7 @@ public class DataFromHubListener extends SocketListener implements Runnable {
     public void run() {
         System.out.println("Start listening for data");
         deserializer = new JsonDeserializer();
-        while (isServerRunning) {
+        while (!isServerRunning) {
             try {
                 content = startSocketListener(portToOpenNumber);
                 System.out.println("Received frame : " + content);

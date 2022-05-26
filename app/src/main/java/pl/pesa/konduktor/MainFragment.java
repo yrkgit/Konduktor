@@ -50,7 +50,7 @@ public class MainFragment extends Fragment {
         unBoardingStats.setText("-");
 
         Thread thread = new Thread(new DataFromHubListener(this));
-        thread.start();;
+        thread.start();
     }
 
     private void valuesUpdate() {
@@ -62,6 +62,7 @@ public class MainFragment extends Fragment {
     }
 
     public void setData(DataFrame dataFrame) {
+
         nextStopValue=dataFrame.getNextStop();
         speedValue=dataFrame.getCurrentSpeed();
         passengerStatsValue=dataFrame.getPassengerStats();

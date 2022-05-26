@@ -15,7 +15,7 @@ public class SocketListener {
 
     public String startSocketListener(int portToOpenNumber) {
         try {
-            DataFromHubListener.stopServer();
+            DataFromHubListener.startServer();
             serverSocket = new ServerSocket(portToOpenNumber);
             socket = serverSocket.accept();
             inputStreamReader = new InputStreamReader(socket.getInputStream());
@@ -28,7 +28,7 @@ public class SocketListener {
             inputStreamReader.close();
             socket.close();
             serverSocket.close();
-            DataFromHubListener.startServer();
+            DataFromHubListener.stopServer();
             return message;
 
         } catch (IOException e) {

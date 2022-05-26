@@ -27,19 +27,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="351.25dp"
         android:layout_marginTop="31.5dp"
+        android:layout_marginEnd="442dp"
         android:text="@string/lock"
         android:textColor="@color/fontColor"
         android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <!--    TOP SEPARATING LINE-->
     <View
         android:id="@+id/topLine"
-        android:layout_width="941dp"
+        android:layout_width="0dp"
         android:layout_height="4.5dp"
         android:layout_marginStart="10.5dp"
         android:layout_marginTop="75.5dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,7 +54,11 @@
         android:layout_height="465dp"
         android:layout_marginStart="231dp"
         android:layout_marginTop="104dp"
+        android:layout_marginEnd="234dp"
+        android:layout_marginBottom="31dp"
         android:background="@color/whiteTransparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,10 +67,11 @@
         android:id="@+id/key1layout"
         android:layout_width="84dp"
         android:layout_height="84dp"
-        android:layout_marginStart="303.5dp"
-        android:layout_marginTop="128dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/logOnBox"
+        app:layout_constraintTop_toTopOf="@+id/logOnBox">
+
         <ImageView
             android:id="@+id/key1"
             android:layout_width="match_parent"
@@ -75,10 +84,10 @@
             android:id="@+id/key1label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="1"
             android:textColor="@color/lockButtonColor"
             android:textSize="50dp"
-            android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/key1"
             app:layout_constraintTop_toTopOf="@+id/key1" />
     </FrameLayout>
@@ -88,10 +97,11 @@
         android:id="@+id/key2layout"
         android:layout_width="84dp"
         android:layout_height="84dp"
-        android:layout_marginStart="438.5dp"
-        android:layout_marginTop="128dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/logOnBox"
+        app:layout_constraintTop_toTopOf="@+id/logOnBox">
+
         <ImageView
             android:id="@+id/key2"
             android:layout_width="match_parent"
@@ -104,10 +114,10 @@
             android:id="@+id/key2label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="2"
             android:textColor="@color/lockButtonColor"
             android:textSize="50dp"
-            android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/key2"
             app:layout_constraintTop_toTopOf="@+id/key2" />
     </FrameLayout>
@@ -117,10 +127,11 @@
         android:id="@+id/key3layout"
         android:layout_width="84dp"
         android:layout_height="84dp"
-        android:layout_marginStart="573.5dp"
-        android:layout_marginTop="128dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="343dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/logOnBox"
+        app:layout_constraintTop_toTopOf="@+id/logOnBox">
+
         <ImageView
             android:id="@+id/key3"
             android:layout_width="match_parent"
@@ -133,10 +144,10 @@
             android:id="@+id/key3label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="3"
             android:textColor="@color/lockButtonColor"
             android:textSize="50dp"
-            android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/key3"
             app:layout_constraintTop_toTopOf="@+id/key3" />
     </FrameLayout>
@@ -146,10 +157,11 @@
         android:id="@+id/key4layout"
         android:layout_width="84dp"
         android:layout_height="84dp"
-        android:layout_marginStart="303.5dp"
-        android:layout_marginTop="240.5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="137dp"
+        app:layout_constraintStart_toStartOf="@+id/logOnBox"
+        app:layout_constraintTop_toTopOf="@+id/logOnBox">
+
         <ImageView
             android:id="@+id/key4"
             android:layout_width="match_parent"
@@ -162,10 +174,10 @@
             android:id="@+id/key4abel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="4"
             android:textColor="@color/lockButtonColor"
             android:textSize="50dp"
-            android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/key4"
             app:layout_constraintTop_toTopOf="@+id/key4" />
     </FrameLayout>
@@ -175,10 +187,11 @@
         android:id="@+id/key5layout"
         android:layout_width="84dp"
         android:layout_height="84dp"
-        android:layout_marginStart="438.5dp"
-        android:layout_marginTop="240.5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="137dp"
+        app:layout_constraintStart_toStartOf="@+id/logOnBox"
+        app:layout_constraintTop_toTopOf="@+id/logOnBox">
+
         <ImageView
             android:id="@+id/key5"
             android:layout_width="match_parent"
@@ -191,10 +204,10 @@
             android:id="@+id/key5label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="5"
             android:textColor="@color/lockButtonColor"
             android:textSize="50dp"
-            android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/key5"
             app:layout_constraintTop_toTopOf="@+id/key5" />
     </FrameLayout>
@@ -204,10 +217,11 @@
         android:id="@+id/key6layout"
         android:layout_width="84dp"
         android:layout_height="84dp"
-        android:layout_marginStart="573.5dp"
-        android:layout_marginTop="240.5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="343dp"
+        android:layout_marginTop="137dp"
+        app:layout_constraintStart_toStartOf="@+id/logOnBox"
+        app:layout_constraintTop_toTopOf="@+id/logOnBox">
+
         <ImageView
             android:id="@+id/key6"
             android:layout_width="match_parent"
@@ -220,10 +234,10 @@
             android:id="@+id/key6label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="6"
             android:textColor="@color/lockButtonColor"
             android:textSize="50dp"
-            android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/key6"
             app:layout_constraintTop_toTopOf="@+id/key6" />
     </FrameLayout>
@@ -233,10 +247,11 @@
         android:id="@+id/key7layout"
         android:layout_width="84dp"
         android:layout_height="84dp"
-        android:layout_marginStart="303.5dp"
-        android:layout_marginTop="353dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="249dp"
+        app:layout_constraintStart_toStartOf="@+id/logOnBox"
+        app:layout_constraintTop_toTopOf="@+id/logOnBox">
+
         <ImageView
             android:id="@+id/key7"
             android:layout_width="match_parent"
@@ -249,10 +264,10 @@
             android:id="@+id/key7abel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="7"
             android:textColor="@color/lockButtonColor"
             android:textSize="50dp"
-            android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/key7"
             app:layout_constraintTop_toTopOf="@+id/key7" />
     </FrameLayout>
@@ -262,10 +277,11 @@
         android:id="@+id/key8layout"
         android:layout_width="84dp"
         android:layout_height="84dp"
-        android:layout_marginStart="438.5dp"
-        android:layout_marginTop="353dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="249dp"
+        app:layout_constraintStart_toStartOf="@+id/logOnBox"
+        app:layout_constraintTop_toTopOf="@+id/logOnBox">
+
         <ImageView
             android:id="@+id/key8"
             android:layout_width="match_parent"
@@ -278,10 +294,10 @@
             android:id="@+id/key8label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="8"
             android:textColor="@color/lockButtonColor"
             android:textSize="50dp"
-            android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/key8"
             app:layout_constraintTop_toTopOf="@+id/key8" />
     </FrameLayout>
@@ -291,10 +307,11 @@
         android:id="@+id/key9layout"
         android:layout_width="84dp"
         android:layout_height="84dp"
-        android:layout_marginStart="573.5dp"
-        android:layout_marginTop="353dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="343dp"
+        android:layout_marginTop="249dp"
+        app:layout_constraintStart_toStartOf="@+id/logOnBox"
+        app:layout_constraintTop_toTopOf="@+id/logOnBox">
+
         <ImageView
             android:id="@+id/key9"
             android:layout_width="match_parent"
@@ -307,10 +324,10 @@
             android:id="@+id/key9label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="9"
             android:textColor="@color/lockButtonColor"
             android:textSize="50dp"
-            android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/key9"
             app:layout_constraintTop_toTopOf="@+id/key9" />
     </FrameLayout>
@@ -320,10 +337,11 @@
         android:id="@+id/key0layout"
         android:layout_width="84dp"
         android:layout_height="84dp"
-        android:layout_marginStart="438.5dp"
-        android:layout_marginTop="465.5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="362dp"
+        app:layout_constraintStart_toStartOf="@+id/logOnBox"
+        app:layout_constraintTop_toTopOf="@+id/logOnBox">
+
         <ImageView
             android:id="@+id/key0"
             android:layout_width="match_parent"
@@ -336,10 +354,10 @@
             android:id="@+id/key0label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="0"
             android:textColor="@color/lockButtonColor"
             android:textSize="50dp"
-            android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/key0"
             app:layout_constraintTop_toTopOf="@+id/key0" />
     </FrameLayout>
@@ -349,10 +367,11 @@
         android:id="@+id/keyClayout"
         android:layout_width="84dp"
         android:layout_height="84dp"
-        android:layout_marginStart="303.5dp"
-        android:layout_marginTop="465.5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="362dp"
+        app:layout_constraintStart_toStartOf="@+id/logOnBox"
+        app:layout_constraintTop_toTopOf="@+id/logOnBox">
+
         <ImageView
             android:id="@+id/keyC"
             android:layout_width="match_parent"
@@ -365,10 +384,10 @@
             android:id="@+id/keyClabel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="C"
             android:textColor="@color/lockButtonColor"
             android:textSize="50dp"
-            android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/keyC"
             app:layout_constraintTop_toTopOf="@+id/keyC" />
     </FrameLayout>
@@ -378,10 +397,11 @@
         android:id="@+id/keyOkLayout"
         android:layout_width="84dp"
         android:layout_height="84dp"
-        android:layout_marginStart="573.5dp"
-        android:layout_marginTop="465.5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="343dp"
+        android:layout_marginTop="362dp"
+        app:layout_constraintStart_toStartOf="@+id/logOnBox"
+        app:layout_constraintTop_toTopOf="@+id/logOnBox">
+
         <ImageView
             android:id="@+id/keyOK"
             android:layout_width="match_parent"
@@ -394,13 +414,13 @@
             android:id="@+id/keyOkLabel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="onClickOk"
             android:text="OK"
             android:textColor="@color/lockButtonColor"
             android:textSize="50dp"
-            android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/keyOk"
-            app:layout_constraintTop_toTopOf="@+id/keyOk"
-            android:onClick="onClickOk"/>
+            app:layout_constraintTop_toTopOf="@+id/keyOk" />
     </FrameLayout>
 
 
