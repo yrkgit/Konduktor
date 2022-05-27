@@ -27,6 +27,9 @@ public class MainFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        System.out.println("Start DATA SERVER!!!!!!");
+        Thread thread = new Thread(new DataFromHubListener(this));
+        thread.start();
     }
 
     @Override
@@ -49,8 +52,7 @@ public class MainFragment extends Fragment {
         boardingStats.setText("-");
         unBoardingStats.setText("-");
 
-        Thread thread = new Thread(new DataFromHubListener(this));
-        thread.start();
+
     }
 
     private void valuesUpdate() {
@@ -62,7 +64,7 @@ public class MainFragment extends Fragment {
     }
 
     public void setData(DataFrame dataFrame) {
-
+        System.out.println("SET DATA");
         nextStopValue=dataFrame.getNextStop();
         speedValue=dataFrame.getCurrentSpeed();
         passengerStatsValue=dataFrame.getPassengerStats();

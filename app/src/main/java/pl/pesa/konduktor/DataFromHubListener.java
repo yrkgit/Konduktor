@@ -23,11 +23,11 @@ public class DataFromHubListener extends SocketListener implements Runnable {
     }
 
     public static void stopServer() {
-        isServerPaused = false;
+        isServerPaused = true;
     }
 
     public static void startServer() {
-        isServerPaused = true;
+        isServerPaused = false;
     }
 
     @Override
