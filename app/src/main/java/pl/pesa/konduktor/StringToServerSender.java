@@ -33,6 +33,7 @@ public class StringToServerSender extends AsyncTask {
             System.out.println(content + " send to "+ destinationIpAddress +" server");
         } catch(ConnectException connectException){
             System.out.println("Can't send frame to "+ destinationIpAddress);
+            connectException.printStackTrace();
         }
         catch (IOException e) {
             e.printStackTrace();

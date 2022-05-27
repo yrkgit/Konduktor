@@ -22,7 +22,7 @@ public class AccessRequestFromHubListener extends SocketListener implements Runn
     public AccessRequestFromHubListener(LogonActivity logonActivity) {
         this.logonActivity = logonActivity;
         //TODO - move port number to config
-        portToOpenNumber = 7801;
+        portToOpenNumber = 7803;
     }
 
     @Override
