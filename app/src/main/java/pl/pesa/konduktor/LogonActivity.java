@@ -60,7 +60,12 @@ public class LogonActivity extends AppCompatActivity implements Screen {
         //TODO change to service mode log and password
         if (userName.getText().toString().equals("asd")) {
             log();
-        } else {
+        }else if(userName.getText().toString().equals("")){
+            showToast("Podaj nazwę użytkownika");
+        }else if(password.getText().toString().equals("")){
+            showToast("Podaj hasło");
+        }
+        else {
             frameContent=logRequestFrameCreator.crateLogRequestFrame(
                     userName.getText().toString(), password.getText().toString(), deviceIp.getDeviceIpAddress(this));
             System.out.println("Trying to send: " + frameContent + " to server");
