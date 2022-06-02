@@ -15,7 +15,7 @@ import pl.pesa.konduktor.frames.DataFrame;
 
 
 public class MainFragment extends Fragment {
-    private TextView nextStop, speed, passengerStats, boardingStats, unBoardingStats;
+    private static TextView nextStop, speed, passengerStats, boardingStats, unBoardingStats;
     private static String nextStopValue;
     private static String speedValue;
     private static int passengerStatsValue;

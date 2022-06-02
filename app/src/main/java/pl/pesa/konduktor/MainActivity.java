@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onBackPressed() {
         //TODO popup sure to log of?
-        DataFromHubListener.stopServer();
+       // DataFromHubListener.stopServer();
         Intent intent = new Intent(MainActivity.this, LogonActivity.class);
         startActivity(intent);
     }

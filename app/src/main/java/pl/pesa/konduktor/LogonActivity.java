@@ -1,23 +1,12 @@
 package pl.pesa.konduktor;
 
-import static androidx.core.content.ContentProviderCompat.requireContext;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.text.format.Formatter;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import java.util.Calendar;
-
-import pl.pesa.konduktor.frames.FrameTypes;
-import pl.pesa.konduktor.frames.JsonSerializer;
-import pl.pesa.konduktor.frames.LogRequestFrame;
 
 public class LogonActivity extends AppCompatActivity implements Screen {
 
@@ -47,7 +36,7 @@ public class LogonActivity extends AppCompatActivity implements Screen {
         userName = findViewById(R.id.editTextUserName);
         password = findViewById(R.id.editTexPassword);
 
-        thread = new Thread(new AccessRequestFromHubListener(this));
+        thread = new Thread(new LogResponseFromHubListener(this));
         thread.start();
     }
 

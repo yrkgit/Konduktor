@@ -11,7 +11,7 @@ import pl.pesa.konduktor.frames.JsonDeserializer;
 import pl.pesa.konduktor.frames.LogResponseTypes;
 import pl.pesa.konduktor.frames.LogResponseFrame;
 
-public class AccessRequestFromHubListener extends SocketListener implements Runnable {
+public class LogResponseFromHubListener extends SocketListener implements Runnable {
     private String content;
     private LogonActivity logonActivity;
     private JsonDeserializer deserializer;
@@ -19,7 +19,7 @@ public class AccessRequestFromHubListener extends SocketListener implements Runn
     private int portToOpenNumber;
 
 
-    public AccessRequestFromHubListener(LogonActivity logonActivity) {
+    public LogResponseFromHubListener(LogonActivity logonActivity) {
         this.logonActivity = logonActivity;
         //TODO - move port number to config
         portToOpenNumber = 7803;
