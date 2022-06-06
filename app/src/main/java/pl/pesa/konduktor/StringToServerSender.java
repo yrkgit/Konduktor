@@ -16,7 +16,7 @@ public class StringToServerSender extends AsyncTask {
 
     public StringToServerSender(String content) {
         this.content = content;
-        destinationIpAddress ="10.1.0.189";
+        destinationIpAddress ="192.168.0.13";
     }
 
     @Override

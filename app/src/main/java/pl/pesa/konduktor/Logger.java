@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+//TODO create logging mechanism
+
 public class Logger {
 
     public static void appendLog(String text) {
