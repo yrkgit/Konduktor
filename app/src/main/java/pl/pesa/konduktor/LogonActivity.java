@@ -58,6 +58,7 @@ public class LogonActivity extends AppCompatActivity implements Screen {
             frameContent=logRequestFrameCreator.crateLogRequestFrame(
                     userName.getText().toString(), password.getText().toString(), deviceIp.getDeviceIpAddress(this));
             System.out.println("Trying to send: " + frameContent + " to server");
+            Logger.appendLog(frameContent);
             StringToServerSender stringToServerSender = new StringToServerSender(frameContent);
             stringToServerSender.execute();
         }
