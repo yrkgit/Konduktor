@@ -52,5 +52,12 @@ public class Frame {
         }
     }
 
-
+    @Override
+    public String toString() {
+        return "Frame{" +
+                "appVersion='" + appVersion + '\'' +
+                ", frameType=" + frameType +
+                ", utc=" + utc +
+                '}';
+    }
 }

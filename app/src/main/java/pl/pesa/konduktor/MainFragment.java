@@ -65,11 +65,11 @@ public class MainFragment extends Fragment {
 
     public void setData(DataFrame dataFrame) {
         System.out.println("SET DATA");
-        nextStopValue=dataFrame.getNextStop();
-        speedValue=dataFrame.getCurrentSpeed();
-        passengerStatsValue=dataFrame.getPassengerStats();
-        boardingStatsValue=dataFrame.getBoardingStats();
-        unBoardingStatsValue= dataFrame.getUnBoardingStats();
+        nextStopValue=dataFrame.getNextStopName();
+        speedValue=dataFrame.getCurrentVehicleSpeed();
+        passengerStatsValue=dataFrame.getCurrentPassengerNumber();
+        boardingStatsValue=dataFrame.getBoardedPassengersOnLastStation();
+        unBoardingStatsValue= dataFrame.getUnBoardedPassengersOnLastStation();
         valuesUpdate();
 
     }

@@ -12,7 +12,10 @@ public class JsonDeserializer {
             LogResponseFrame logResponseFrame = gson.fromJson(content, LogResponseFrame.class);
             return logResponseFrame;
         }else if (frame.getFrameType().equals(FrameTypes.DATA)) {
+            System.out.println(frame);
             DataFrame dataFrame = gson.fromJson(content, DataFrame.class);
+            System.out.println(frame.getFrameType());
+            System.out.println(dataFrame.getNextStopName());
             return dataFrame;
         }
         else {
