@@ -1,10 +1,10 @@
-package pl.pesa.konduktor.frames;
+package pl.pesa.konduktor.packet;
 
-public class LogResponseFrame extends Frame  implements Serializable{
+public class LogResponsePacket extends Packet implements Serializable{
     private LogResponseTypes permission;
 
 
-    public LogResponseFrame(Builder builder) {
+    public LogResponsePacket(Builder builder) {
         super(builder);
         this.permission = builder.permission;
 
@@ -14,7 +14,7 @@ public class LogResponseFrame extends Frame  implements Serializable{
         return new Builder();
     }
 
-    public static class Builder extends Frame.Builder<Builder> {
+    public static class Builder extends Packet.Builder<Builder> {
         private LogResponseTypes permission;
 
 
@@ -29,8 +29,8 @@ public class LogResponseFrame extends Frame  implements Serializable{
         }
 
 
-        public LogResponseFrame build() {
-            return new LogResponseFrame(this);
+        public LogResponsePacket build() {
+            return new LogResponsePacket(this);
         }
     }
 

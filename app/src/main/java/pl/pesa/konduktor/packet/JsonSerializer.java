@@ -1,4 +1,4 @@
-package pl.pesa.konduktor.frames;
+package pl.pesa.konduktor.packet;
 
 import com.google.gson.Gson;
 

@@ -1,14 +1,14 @@
-package pl.pesa.konduktor.frames;
+package pl.pesa.konduktor.packet;
 
-public class Frame {
+public class Packet {
     private String appVersion;
-    private FrameTypes frameType;
+    private PacketTypes packetType;
 
     private long utc;
 
-    protected Frame(Builder<?> builder) {
+    protected Packet(Builder<?> builder) {
         this.appVersion = builder.appVersion;
-        this.frameType = builder.frameType;
+        this.packetType = builder.packetType;
         this.utc = builder.utc;
     }
 
@@ -20,13 +20,13 @@ public class Frame {
         };
     }
 
-    public FrameTypes getFrameType() {
-        return frameType;
+    public PacketTypes getPacketType() {
+        return packetType;
     }
 
     public abstract static class Builder<T extends Builder<T>> {
         private String appVersion;
-        private FrameTypes frameType;
+        private PacketTypes packetType;
 
         private long utc;
 
@@ -37,8 +37,8 @@ public class Frame {
             return this.getThis();
         }
 
-        public T frameType(FrameTypes frameType) {
-            this.frameType = frameType;
+        public T packetType(PacketTypes packetType) {
+            this.packetType = packetType;
             return this.getThis();
         }
 
@@ -47,16 +47,16 @@ public class Frame {
             return this.getThis();
         }
 
-        public Frame build() {
-            return new Frame(this);
+        public Packet build() {
+            return new Packet(this);
         }
     }
 
     @Override
     public String toString() {
-        return "Frame{" +
+        return "Packet{" +
                 "appVersion='" + appVersion + '\'' +
-                ", frameType=" + frameType +
+                ", packetType=" + packetType +
                 ", utc=" + utc +
                 '}';
     }

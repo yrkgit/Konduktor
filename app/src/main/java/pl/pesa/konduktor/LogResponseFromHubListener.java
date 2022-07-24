@@ -1,21 +1,21 @@
 /**
- * Runnable class that opening socket (by invoking SocketListener) and starting listening to LogResponseFrame from ConductorHub and logon when receive permission
+ * Runnable class that opening socket (by invoking SocketListener) and starting listening to LogResponsePacket from ConductorHub and logon when receive permission
  */
 
 package pl.pesa.konduktor;
 
 
-import pl.pesa.konduktor.frames.Frame;
-import pl.pesa.konduktor.frames.FrameTypes;
-import pl.pesa.konduktor.frames.JsonDeserializer;
-import pl.pesa.konduktor.frames.LogResponseTypes;
-import pl.pesa.konduktor.frames.LogResponseFrame;
+import pl.pesa.konduktor.packet.LogResponsePacket;
+import pl.pesa.konduktor.packet.Packet;
+import pl.pesa.konduktor.packet.PacketTypes;
+import pl.pesa.konduktor.packet.JsonDeserializer;
+import pl.pesa.konduktor.packet.LogResponseTypes;
 
 public class LogResponseFromHubListener extends SocketListener implements Runnable {
     private String content;
     private LogonActivity logonActivity;
     private JsonDeserializer deserializer;
-    private Frame frame;
+    private Packet packet;
     private int portToOpenNumber;
 
 
@@ -31,15 +31,15 @@ public class LogResponseFromHubListener extends SocketListener implements Runnab
         deserializer = new JsonDeserializer();
         try {
             content = startSocketListener(portToOpenNumber);
-            System.out.println("Received frame : " + content);
-            frame = deserializer.deserializeJsonToFrameObject(content);
-            if (frame!=null && frame.getFrameType().equals(FrameTypes.LOGRESPONSE)) {
-                LogResponseFrame logResponseFrame = (LogResponseFrame) frame;
-                System.out.println(logResponseFrame.getPermission().toString());
-                if (logResponseFrame.getPermission().equals(LogResponseTypes.GRANTED)) {
+            System.out.println("Received packet : " + content);
+            packet = deserializer.deserializeJsonToPacket(content);
+            if (packet !=null && packet.getPacketType().equals(PacketTypes.LOGRESPONSE)) {
+                LogResponsePacket logResponsePacket = (LogResponsePacket) packet;
+                System.out.println(logResponsePacket.getPermission().toString());
+                if (logResponsePacket.getPermission().equals(LogResponseTypes.GRANTED)) {
                     System.out.println("Access GRANTED to user: "+logonActivity.getUserName());
                     logonActivity.log();
-                } else if (logResponseFrame.getPermission().equals(LogResponseTypes.DENIED)) {
+                } else if (logResponsePacket.getPermission().equals(LogResponseTypes.DENIED)) {
                     logonActivity.showToast(logonActivity.getString(R.string.accessDenied));
                     System.out.println("Access DENIED");
                     run();

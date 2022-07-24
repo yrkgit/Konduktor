@@ -1,9 +1,9 @@
 package pl.pesa.konduktor;
 
-import pl.pesa.konduktor.frames.DataFrame;
-import pl.pesa.konduktor.frames.Frame;
-import pl.pesa.konduktor.frames.FrameTypes;
-import pl.pesa.konduktor.frames.JsonDeserializer;
+import pl.pesa.konduktor.packet.DataPacket;
+import pl.pesa.konduktor.packet.Packet;
+import pl.pesa.konduktor.packet.PacketTypes;
+import pl.pesa.konduktor.packet.JsonDeserializer;
 
 
 public class DataFromHubListener extends SocketListener implements Runnable {
@@ -12,7 +12,7 @@ public class DataFromHubListener extends SocketListener implements Runnable {
     private static boolean isServerPaused;
     private MainFragment mainFragment;
     private JsonDeserializer deserializer;
-    private Frame frame;
+    private Packet packet;
     private final int portToOpenNumber;
 
 
@@ -39,11 +39,11 @@ public class DataFromHubListener extends SocketListener implements Runnable {
             while (!isServerPaused) {
                 try {
                     content = startSocketListener(portToOpenNumber);
-                    System.out.println("Received frame : " + content);
-                    frame = deserializer.deserializeJsonToFrameObject(content);
-                    if (frame != null && frame.getFrameType().equals(FrameTypes.DATA)) {
-                        DataFrame dataFrame = (DataFrame) frame;
-                        mainFragment.setData(dataFrame);
+                    System.out.println("Received packet : " + content);
+                    packet = deserializer.deserializeJsonToPacket(content);
+                    if (packet != null && packet.getPacketType().equals(PacketTypes.DATA)) {
+                        DataPacket dataPacket = (DataPacket) packet;
+                        mainFragment.setData(dataPacket);
                     }
                 } catch (Exception e) {
                 }

@@ -11,11 +11,11 @@ import android.widget.Toast;
 public class LogonActivity extends AppCompatActivity implements Screen {
 
     private SetScreen setScreen;
-    private LogRequestFrameCreator logRequestFrameCreator;
+    private LogRequestPacketCreator logRequestPacketCreator;
     private EditText userName;
     private EditText password;
     private DeviceIp deviceIp;
-    private String frameContent;
+    private String packetContent;
     private Thread thread;
 
     public String getUserName() {
@@ -25,7 +25,7 @@ public class LogonActivity extends AppCompatActivity implements Screen {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setScreen = new SetScreen();
-        logRequestFrameCreator = new LogRequestFrameCreator();
+        logRequestPacketCreator = new LogRequestPacketCreator();
         deviceIp = new DeviceIp();
 
         screenSetUp();
@@ -55,10 +55,10 @@ public class LogonActivity extends AppCompatActivity implements Screen {
             showToast("Podaj hasło");
         }
         else {
-            frameContent=logRequestFrameCreator.crateLogRequestFrame(
+            packetContent = logRequestPacketCreator.crateLogRequestPacket(
                     userName.getText().toString(), password.getText().toString(), deviceIp.getDeviceIpAddress(this));
-            System.out.println("Trying to send: " + frameContent + " to server");
-            StringToServerSender stringToServerSender = new StringToServerSender(frameContent);
+            System.out.println("Trying to send: " + packetContent + " to server");
+            StringToServerSender stringToServerSender = new StringToServerSender(packetContent);
             stringToServerSender.execute();
         }
     }

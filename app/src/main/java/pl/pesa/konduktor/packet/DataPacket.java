@@ -1,6 +1,6 @@
-package pl.pesa.konduktor.frames;
+package pl.pesa.konduktor.packet;
 
-public class DataFrame extends Frame implements Serializable{
+public class DataPacket extends Packet implements Serializable{
     private final String currentStopName;
     private final String nextStopName;
     private final String currentVehicleSpeed;
@@ -10,7 +10,7 @@ public class DataFrame extends Frame implements Serializable{
     private final int unBoardedPassengersOnLastStation;
 
 
-    public DataFrame(Builder builder) {
+    public DataPacket(Builder builder) {
         super(builder);
         this.currentStopName = builder.currentStopName;
         this.nextStopName = builder.nextStopName;
@@ -24,7 +24,7 @@ public class DataFrame extends Frame implements Serializable{
         return new Builder();
     }
 
-    public static class Builder extends Frame.Builder<Builder> {
+    public static class Builder extends Packet.Builder<Builder> {
         private String currentStopName;
         private String nextStopName;
         private String currentVehicleSpeed;
@@ -65,8 +65,8 @@ public class DataFrame extends Frame implements Serializable{
             return this;
         }
 
-        public DataFrame build() {
-            return new DataFrame(this);
+        public DataPacket build() {
+            return new DataPacket(this);
         }
     }
 

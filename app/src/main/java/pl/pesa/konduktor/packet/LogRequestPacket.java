@@ -1,11 +1,11 @@
-package pl.pesa.konduktor.frames;
+package pl.pesa.konduktor.packet;
 
-public class LogRequestFrame extends Frame implements Serializable{
+public class LogRequestPacket extends Packet implements Serializable{
     private String user;
     private String pass;
     private String ipAddress;
 
-    public LogRequestFrame(Builder builder) {
+    public LogRequestPacket(Builder builder) {
         super(builder);
         this.user = builder.user;
         this.pass = builder.pass;
@@ -16,7 +16,7 @@ public class LogRequestFrame extends Frame implements Serializable{
         return new Builder();
     }
 
-    public static class Builder extends Frame.Builder<Builder> {
+    public static class Builder extends Packet.Builder<Builder> {
         private String user;
         private String pass;
         private String ipAddress;
@@ -41,8 +41,8 @@ public class LogRequestFrame extends Frame implements Serializable{
             return this;
         }
 
-        public LogRequestFrame build() {
-            return new LogRequestFrame(this);
+        public LogRequestPacket build() {
+            return new LogRequestPacket(this);
         }
     }
 

@@ -1,6 +1,6 @@
-package pl.pesa.konduktor.frames;
+package pl.pesa.konduktor.packet;
 
-public enum FrameTypes {
+public enum PacketTypes {
     //TODO define frame types
     LOGREQUEST,LOGRESPONSE,DATA;
 }

@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import pl.pesa.konduktor.frames.DataFrame;
+import pl.pesa.konduktor.packet.DataPacket;
 
 
 public class MainFragment extends Fragment {
@@ -63,13 +63,13 @@ public class MainFragment extends Fragment {
             unBoardingStats.setText(String.valueOf(unBoardingStatsValue));
     }
 
-    public void setData(DataFrame dataFrame) {
+    public void setData(DataPacket dataPacket) {
         System.out.println("SET DATA");
-        nextStopValue=dataFrame.getNextStopName();
-        speedValue=dataFrame.getCurrentVehicleSpeed();
-        passengerStatsValue=dataFrame.getCurrentPassengerNumber();
-        boardingStatsValue=dataFrame.getBoardedPassengersOnLastStation();
-        unBoardingStatsValue= dataFrame.getUnBoardedPassengersOnLastStation();
+        nextStopValue= dataPacket.getNextStopName();
+        speedValue= dataPacket.getCurrentVehicleSpeed();
+        passengerStatsValue= dataPacket.getCurrentPassengerNumber();
+        boardingStatsValue= dataPacket.getBoardedPassengersOnLastStation();
+        unBoardingStatsValue= dataPacket.getUnBoardedPassengersOnLastStation();
         valuesUpdate();
 
     }
